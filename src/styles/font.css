@@ -1,0 +1,179 @@
+@font-face {
+    font-family: 'GeneralSans';
+    src:  url('/assets/fonts/Sans/GeneralSans-Extralight.woff') format('woff');
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-ExtralightItalic.woff') format('woff');
+    font-weight: 200;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-Italic.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src:  url('/assets/fonts/Sans/GeneralSans-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-Bold.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src:  url('/assets/fonts/Sans/GeneralSans-BoldItalic.woff') format('woff');
+    font-weight: 700;
+    font-display: swap;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-Variable.woff') format('woff');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'GeneralSans';
+    src: url('/assets/fonts/Sans/GeneralSans-VariableItalic.woff') format('woff');
+    font-weight: 200 700;
+    font-display: swap;
+    font-style: italic;
+  }
+  
+/*Font Grotesk */
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-ExtraLight.woff")format('woff');
+    font-weight: 200;
+    font-display:swap;
+    font-style:italic;
+}
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-ExtraLightItalic.woff")format('woff');
+    font-weight: 200;
+    font-display:swap;
+    font-style:italic;
+}
+
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-Thin.woff")format('woff');
+    font-weight: 300;
+    font-display:swap;
+    font-style:normal;
+}
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-ThinItalic.woff")format('woff');
+    font-weight: 300;
+    font-display:swap;
+    font-style:italic;
+}
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-Regular.woff")format('woff');
+    font-weight: 400;
+    font-display:swap;
+    font-style:normal;
+}
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-Medium.woff")format('woff');
+    font-weight: 500;
+    font-display:swap;
+    font-style:normal;
+}
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-MediumItalic.woff")format('woff');
+    font-weight: 500;
+    font-display:swap;
+    font-style:italic;
+}
+
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-SemiBold.woff")format('woff');
+    font-weight: 600;
+    font-display:swap;
+    font-style:normal;
+}
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-SemiBoldItalic.woff")format('woff');
+    font-weight: 600;
+    font-display:swap;
+    font-style:italic;
+}
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-Bold.woff")format('woff');
+    font-weight: 700;
+    font-display:swap;
+    font-style:normal;
+}
+@font-face{
+    font-family: 'LensGrotesk';
+    src: url("/assets/fonts/Grotesk/LensGrotesk-BoldItalic.woff")format('woff');
+    font-weight: 700;
+    font-display:swap;
+    font-style:italic;
+}
