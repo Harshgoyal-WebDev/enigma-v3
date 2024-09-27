@@ -30,6 +30,7 @@ export default function App({ Component, pageProps }) {
           {
             rel: "preload",
             href: "/assets/fonts/grotesk/LensGrotesk-Medium.woff",
+            href: "/assets/fonts/grotesk/LensGrotesk-Medium.woff",
             as: "font",
             type: "font/woff",
             crossOrigin: "",
@@ -47,30 +48,28 @@ export default function App({ Component, pageProps }) {
 
   <Component {...pageProps} />
   
-  <Canvas
+  <div className=" w-full h-full">
+
+  <Canvas className="view"
         style={{
           position: "fixed",
           top: 0,
           bottom: 0,
           left: 0,
           right: 0,
-          overflow: "hidden",
+        
+         
+      
           pointerEvents:"none"
         }}
         eventSource={rootElement}
-      >
-        <PerspectiveCamera 
-       aspect={width / height}
-         position={[0,0,5]}
-         fov={75}
-         near={0.1}
-        far={1000}>
-         <ambientLight intensity={0.5} />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
+       
+      > 
+      {/* <fog attach="fog" color="hotpink" near={1} far={2} /> */}
         <View.Port />
         <Preload all />
-        </PerspectiveCamera>
       </Canvas>
+  </div>
   </ReactLenis>
   </>
   )
