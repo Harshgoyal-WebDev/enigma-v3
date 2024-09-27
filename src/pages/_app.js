@@ -6,6 +6,7 @@ import { DefaultSeo } from "next-seo";
 import {
   View,
   Preload,
+  PerspectiveCamera,
 } from "@react-three/drei";
 export default function App({ Component, pageProps }) {
   const [rootElement, setRootElement] = useState(null);
@@ -28,14 +29,14 @@ export default function App({ Component, pageProps }) {
         additionalLinkTags={[
           {
             rel: "preload",
-            href: "/assets/fonts/fonts/grotesk/LensGrotesk-Medium.woff",
+            href: "/assets/fonts/grotesk/LensGrotesk-Medium.woff",
             as: "font",
             type: "font/woff",
             crossOrigin: "",
           },
           {
             rel: "preload",
-            href: "/assets/fonts/fonts/sans/GeneralSans-Regular.woff",
+            href: "/assets/fonts/sans/GeneralSans-Regular.woff",
             as: "font",
             type: "font/woff",
             crossOrigin: "",
@@ -54,11 +55,21 @@ export default function App({ Component, pageProps }) {
           left: 0,
           right: 0,
           overflow: "hidden",
+          pointerEvents:"none"
         }}
         eventSource={rootElement}
       >
+        <PerspectiveCamera 
+       aspect={width / height}
+         position={[0,0,5]}
+         fov={75}
+         near={0.1}
+        far={1000}>
+         <ambientLight intensity={0.5} />
+      <directionalLight position={[5, 5, 5]} intensity={1} />
         <View.Port />
         <Preload all />
+        </PerspectiveCamera>
       </Canvas>
   </ReactLenis>
   </>
