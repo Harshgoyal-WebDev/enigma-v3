@@ -8,6 +8,7 @@ import {
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Link from "next/link";
 gsap.registerPlugin(useGSAP,ScrollTrigger)
 
 const Projects = () => {
@@ -29,57 +30,57 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="w-screen h-full py-[5%] overflow-hidden " id="projects">
+    <section className="w-screen h-full mt-[10%] py-[5%] overflow-hidden " id="projects">
       <div className="w-full flex justify-between gap-[3vw] translate-x-[55%] project-handles">
-        <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60 ">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60 ">2023</p>
-        </div>
-        <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        </Link>
+        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
-        </div>
-        <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        </Link>
+        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
-        </div>
-        <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        </Link>
+        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
-        </div>
-        <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        </Link>
+        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
-        </div>
-        <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        </Link>
+        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
-        </div>
-        <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        </Link>
+        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
-        </div>
+        </Link>
       </div>
       <div className="w-full h-full">
         <View style={{ height: height, width: width }}>

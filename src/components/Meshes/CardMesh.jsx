@@ -22,7 +22,7 @@ export default function CardMesh() {
       scrollTrigger: {
         trigger: "#projects",
         pin: true,
-        markers: true,
+        // markers: true,
         start: "5% top",
         end: "+=2000 top",
         scrub: true,

@@ -10,6 +10,7 @@ import {
 
 import Projects from '@/components/Home/Projects';
 import Hero from '@/components/Home/Hero';
+import Whatwedo from '@/components/Home/Whatwedo';
 
 
 
@@ -20,6 +21,7 @@ const home=()=> {
     <>
      <main>
       <Hero/>
+      <Whatwedo/>
       <Projects/>
 
      </main>
