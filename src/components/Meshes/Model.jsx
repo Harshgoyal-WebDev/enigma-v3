@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Model({ sectionId }) {
   const modelRef = useRef(null);
-  const meshRef = useRef(null);
+  const modelMeshRef = useRef(null);
   const { scene } = useGLTF("/enigma_stl.glb");
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function Model({ sectionId }) {
       y: -10,
       z: 1,
       duration: 1,
-    }).to(meshRef.current.position, {
+    }).to(modelMeshRef.current.position, {
       z: 17,
       y: 10,
       x: 0.5,
@@ -64,7 +64,7 @@ export default function Model({ sectionId }) {
   }, [scene, sectionId]);
 
   return (
-    <mesh ref={meshRef} scale={0.7} className="">
+    <mesh ref={modelMeshRef} scale={0.7} className="">
       <ambientLight intensity={0.5} /> 
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <Environment files="/assets/home/environment.hdr"/>

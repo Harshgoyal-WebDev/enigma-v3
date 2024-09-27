@@ -41,12 +41,12 @@ const Hero = () => {
       <section id={sectionId} className=''>
         <div className='relative h-[200vh]  w-screen flex flex-col items-start justify-start mb-[5vw] '> 
             <div className='w-screen container-lg h-screen flex flex-col items-start justify-center gap-[2vw] '>
-              <h1 className='title-1 grotesk leading-[1.01] block w-[75vw]'>
+              <h1 className='title-1 grotesk leading-[1.01] block w-[60%] tracking-tight'>
                 Digital 
                 <span className='text-[#FF6B00]'> Experience</span><br />
-                <span className='outline-text'>Design Agency</span>
+                <span className='outline-text tracking-normal'>Design Agency</span>
               </h1>
-              <p className='w-[70%] grotesk content'>
+              <p className='w-[50%] '>
                 Harnessing the power of Emotion, Design, Technology & Neuromarketing, we create Digital Brand Experiences that propel your success in the enigmatic realm of bits & bytes.
               </p>
             </div>

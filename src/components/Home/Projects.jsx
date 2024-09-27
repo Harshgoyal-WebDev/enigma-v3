@@ -2,10 +2,8 @@ import React, { useEffect, useState } from "react";
 import CardMesh from "../Meshes/CardMesh";
 import {
   View,
-  Preload,
-  OrbitControls,
   PerspectiveCamera,
-  Environment,
+
 } from "@react-three/drei";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -31,14 +29,14 @@ const Projects = () => {
   }, []);
 
   return (
-    <section className="w-screen h-full py-[5%] overflow-hidden bg-black" id="projects">
+    <section className="w-screen h-full py-[5%] overflow-hidden " id="projects">
       <div className="w-full flex justify-between gap-[3vw] translate-x-[55%] project-handles">
         <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
-          <h3 className="grotesk text-[1.2vw] font-medium text-white">Patronum</h3>
-          <p className="text-[1.1vw] opacity-60 text-white">
+          <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
+          <p className="text-[1.1vw] opacity-60 ">
             Web Design Marketing Branding
           </p>
-          <p className="text-[1.1vw] opacity-60 text-white">2023</p>
+          <p className="text-[1.1vw] opacity-60 ">2023</p>
         </div>
         <div className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
@@ -84,7 +82,7 @@ const Projects = () => {
         </div>
       </div>
       <div className="w-full h-full">
-        <View className="view" style={{ height: height, width: width }}>
+        <View style={{ height: height, width: width }}>
           <ambientLight intensity={1} /> Adjust ambient light intensity
           {/* Adjust the point light position and intensity */}
           <pointLight position={[-2, 0, 5]} intensity={1} color="white" />
@@ -102,10 +100,10 @@ const Projects = () => {
           {/* Try adding helper to visualize lights during development */}
           {/* <directionalLightHelper args={[directionalLight, 1]} /> */}
           {/* <pointLightHelper args={[pointLight, 1]} /> */}
-          <fog attach="fog" color="black" near={9} far={12} />
+          <fog attach="fog" color="white" near={9} far={12} />
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 10]} />
           <CardMesh />
-          <OrbitControls makeDefault />
+        
         </View>
       </div>
     </section>
