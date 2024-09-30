@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useRef, useEffect } from "react";
 import { Environment, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
@@ -8,7 +9,6 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 export default function Model() {
-  const modelRef = useRef(null);
   const modelMeshRef = useRef(null);
   const { scene } = useGLTF("/enigma_stl.glb");
 
@@ -39,49 +39,29 @@ export default function Model() {
     useGSAP(() => {
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "#hero",
+          trigger: "#hero-model",
           start: "top top",
-          end: "+=3000 bottom",
+          end: "bottom top",
           scrub: true,
           pin: true,
         },
       });
-      tl.to(".title-block", {
-        // yPercent: -100,
-        opacity: 0,
-        duration: 2,
-        ease: "none",
-      });
-      tl.to(modelRef.current.position, {
-        x: -2.5,
+      tl.to(modelMeshRef.current.position, {
+        delay: 2,
+        x: 0,
         y: 0,
         z: 1,
-        duration: 2,
-        delay:-2,
+        duration: 6,
         ease: "none",
       });
       tl.to(modelMeshRef.current.position, {
         z: 20,
         y: 0,
-        x: 2.5,
+        x: 0,
         duration: 8,
         delay: 0,
         ease: "none",
       });
-      tl.fromTo(
-        ".video",
-        {
-          yPercent: -40,
-          scale: 0,
-        },
-        {
-          yPercent: -50,
-          scale: 1,
-          duration: 3,
-          delay: -7.5,
-          ease: "none",
-        }
-      );
     });
   }
 
@@ -90,7 +70,7 @@ export default function Model() {
       <ambientLight intensity={0.5} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <Environment files="/assets/home/environment.hdr" />
-      <primitive object={scene} ref={modelRef} />
+      <primitive object={scene} />
     </mesh>
   );
 }

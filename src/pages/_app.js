@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useState } from "react";
-import {ReactLenis} from "@studio-freight/react-lenis";
+import { ReactLenis } from "@studio-freight/react-lenis";
 import { DefaultSeo } from "next-seo";
 import {
   View,
@@ -20,10 +20,11 @@ export default function App({ Component, pageProps }) {
     const handleResize = () => {
       setWidth(window.innerWidth);
       setHeight(window.innerHeight);
-    }},[])
+    }
+  }, [])
   return (
     <>
-    <DefaultSeo
+      <DefaultSeo
         title="Enigma-v3"
         description="digital experience design agency"
         additionalLinkTags={[
@@ -44,30 +45,25 @@ export default function App({ Component, pageProps }) {
           },
         ]}
       />
-  <ReactLenis root lerp={0.3}>
+      <ReactLenis root lerp={0.3}>
 
-  <Component {...pageProps} />
-  
-  <div className=" w-full h-full">
-
-  <Canvas className="view"
-        style={{
-          position: "fixed",
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0,
-          pointerEvents:"none"
-        }}
-        eventSource={rootElement}
-       
-      > 
-        <View.Port />
-        <Preload all />
-      </Canvas>
-  </div>
-  </ReactLenis>
-  </>
+        <Component {...pageProps} />
+        <Canvas className="view"
+          style={{
+            position: "fixed",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            pointerEvents: "none"
+          }}
+          eventSource={rootElement}
+        >
+          <View.Port />
+          <Preload all />
+        </Canvas>
+      </ReactLenis>
+    </>
   )
-  
+
 }

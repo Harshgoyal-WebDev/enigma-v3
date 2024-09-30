@@ -1,34 +1,23 @@
-
+import React from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(useGSAP,ScrollTrigger)
-import {
-  PerspectiveCamera,
-  Environment,
-} from "@react-three/drei";
-
 import Projects from '@/components/Home/Projects';
 import Hero from '@/components/Home/Hero';
 import Whatwedo from '@/components/Home/Whatwedo';
 
+gsap.registerPlugin(useGSAP,ScrollTrigger)
 
-
-const home=()=> {
+export default function Home() {
   
-
   return (
     <>
      <main>
       <Hero/>
       <Whatwedo/>
-      <Projects/>
-
+      <div className='h-[500vh] bg-black/50' />
+      {/* <Projects/> */}
      </main>
-      
     </>
   );
 }
-
-
-export default home;

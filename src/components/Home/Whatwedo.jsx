@@ -1,34 +1,38 @@
-import React, { useEffect } from 'react';
+import React, { useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Whatwedo = () => {
-    // useEffect(() => {
-    //     const tl = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: ".whatwedo",
-    //             start: "top top", 
-    //             end: "bottom top",
-    //             pin: true,
-    //             scrub: true,
-    //             markers: true
-    //         }
-    //     });
 
-    //     // Cleanup ScrollTrigger on component unmount
-    //     return () => {
-    //         if (tl.scrollTrigger) {
-    //             tl.scrollTrigger.kill();
-    //         }
-    //     };
-    // }, []); // Empty dependency array means this will run only once on mount
+    const containerRef = useRef(null);
+    const textRef = useRef(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: "top top",
+                end: "bottom top",
+                scrub: true,
+                pin: true,
+                markers: true,
+            }
+        });
+        tl.from(textRef.current, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+        });
+    });
 
     return (
-        <section id='whatwedo' className='w-screen h-screen relative'>
-            <div className='w-full h-full flex justify-center items-center whatwedo'>
-                <h3 className='text-[5vw] grotesk font-medium text-center'>
-                    We Make Cool Things That Do Great Business
+        <section ref={containerRef} className='w-full h-screen' id='section-break'>
+            <div className='container-lg h-full flex justify-center items-center'>
+                <h3 ref={textRef} className='text-center text-[4.5vw] font-medium text-black'>
+                    We make cool things that do great business
                 </h3>
             </div>
         </section>
