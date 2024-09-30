@@ -47,8 +47,8 @@ export default function Model() {
         },
       });
       tl.to(".title-block", {
-        yPercent: -100,
-        // opacity: 0,
+        // yPercent: -100,
+        opacity: 0,
         duration: 2,
         ease: "none",
       });
@@ -63,8 +63,8 @@ export default function Model() {
       tl.to(modelMeshRef.current.position, {
         z: 20,
         y: 0,
-        x: 1.2,
-        duration: 4,
+        x: 2.5,
+        duration: 8,
         delay: 0,
         ease: "none",
       });
@@ -78,7 +78,7 @@ export default function Model() {
           yPercent: -50,
           scale: 1,
           duration: 3,
-          delay: -4,
+          delay: -7.5,
           ease: "none",
         }
       );

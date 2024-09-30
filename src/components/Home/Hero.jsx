@@ -1,5 +1,5 @@
 import { View } from '@react-three/drei';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Model from '../Meshes/Model';
@@ -17,10 +17,10 @@ const Hero = () => {
       <section id='hero' className=''>
         <div className='relative h-[100vh]  w-screen flex flex-col items-start justify-start mb-[5vw] '> 
             <div className='w-screen container-lg h-screen flex flex-col items-start justify-center gap-[2vw] title-block '>
-              <h1 className='title-1 grotesk leading-[1.01] block w-[60%] tracking-tight'>
-                Digital 
-                <span className='text-[#FF6B00]'> Experience</span><br />
-                <span className='outline-text tracking-normal'>Design Agency</span>
+              <h1 className='title-1 grotesk leading-[1.01] block w-[60%] tracking-tight '>
+                <span className='hero-title-anim'>Digital</span> 
+                <span className='text-primary-color hero-title-anim'> Experience</span><br />
+                <span className='outline-text tracking-normal hero-title-anim'>Design Agency</span>
               </h1>
               <p className='w-[50%] '>
                 Harnessing the power of Emotion, Design, Technology & Neuromarketing, we create Digital Brand Experiences that propel your success in the enigmatic realm of bits & bytes.
