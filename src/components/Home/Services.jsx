@@ -15,7 +15,7 @@ const WorkCard = ({ no, heading, src, para, className }) => {
     const mouseY = e.clientY - cardRect.top; // Mouse Y relative to card
 
     // Calculate how much the image should move
-    const xMove = (mouseX / cardRect.width - 0.5) * 30; // Move up to 30px in X
+    const xMove = (mouseX / cardRect.width - 0.5) * 50; // Move up to 30px in X
     const yMove = (mouseY / cardRect.height - 0.5) * 30; // Move up to 30px in Y
 
     gsap.to(image, {
@@ -40,12 +40,12 @@ const WorkCard = ({ no, heading, src, para, className }) => {
   
   return (
     <>
-      <div  onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      <div 
         className={`w-[90vw] h-[45vw] flex flex-col gap-[4vw] items-center rounded-[50px] bg-secondary-color px-[4vw] shadow-xl border border-black/10 mobile:rounded-[6vw] fadeup tablet:rounded-[3vw] mobile:py-[10vw] idcards `}
       >
         <div className="w-full h-full flex justify-between items-center">
-          <div className="w-[36vw] h-[36vw] relative rounded-[2vw] overflow-hidden bg-zinc-900">
+          <div className="w-[36vw] h-[36vw] relative rounded-[2vw] overflow-hidden bg-zinc-900"  onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}>
             <Image
               src="/assets/home/id-card-strategy.webp"
               alt="id-card"
@@ -102,49 +102,84 @@ const Services = () => {
   if (globalThis.innerWidth < 1024) {
   } else {
     useGSAP(() => {
-      const tl = gsap.timeline({
+      // Timeline with pinning
+      const tl1 = gsap.timeline({
         scrollTrigger: {
           trigger: ".works-container",
-          pin: true,
+          pin: true, // Pin for the first part
           start: "top top",
           end: "+=3000 top",
           scrub: true,
           // markers: true,
         },
       });
-      tl.to(".feature-container2", {
-        yPercent: -100,
-
-        ease: "power4.out",
-      });
-      tl.to(".feature-container", {
-        scale: 0.9,
-        delay: -0.5,
-      });
-      tl.to(".feature-container3", {
-        yPercent: -200,
-        ease: "power4.out",
-        delay: -0.3,
-      });
-      tl.to(".feature-container2", {
-        scale: 0.92,
-        delay: -0.5,
-      });
-      tl.to(".feature-container4",{
-        yPercent:-300,
-        ease:"power4.out",
-        delay:-0.3
+    
+      // Animations for pinned section
+      tl1.from(".feature-container", {
+        yPercent: 20,
+        ease: "none",
+        duration: 0.07,
       })
-      tl.to(".feature-container3",{
-        scale:0.95,
-        delay:-0.5
+        .to(".feature-container2", {
+          yPercent: -100,
+          ease: "power4.out",
+        })
+        .to(".feature-container", {
+          scale: 0.9,
+          delay: -0.5,
+          ease: "none",
+        })
+        .to(".feature-container3", {
+          yPercent: -200,
+          ease: "power4.out",
+          delay: -0.3,
+        })
+        .to(".feature-container2", {
+          scale: 0.93,
+          delay: -0.5,
+          ease: "none",
+        })
+        .to(".feature-container4", {
+          yPercent: -300,
+          ease: "power1.out",
+          delay: -0.3,
+        })
+        .to(".feature-container3", {
+          scale: 0.96,
+          delay: -0.5,
+        });
+    
+      // Second timeline without pinning
+      const tl2 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".works-container",
+         // Disable pinning for this section
+          start: "+=3000 top", // Starts after the previous scroll section
+          end: "+=5000 top", // Control how far the next animations scroll
+          scrub: true,
+          markers: true, // Uncomment for debugging
+        },
+      });
+    
+      // Animations without pinning
+      tl2.to(".feature-container3", {
+        yPercent: -190,
+        ease: "none",
       })
-
+        .to(".feature-container2", {
+          yPercent: -90,
+          ease: "none",
+        })
+        .to(".feature-container", {
+          yPercent: 20,
+          ease: "none",
+        });
     });
+    
   }
   return (
     <section
-      className="overflow-hidden w-screen h-screen bg-transparent works-container mobile:h-full tablet:h-full my-[10%]"
+      className=" w-screen h-screen bg-transparent works-container mobile:h-full tablet:h-full my-[10%]"
       id="work"
     >
       <div className="flex flex-col justify-center items-center relative">

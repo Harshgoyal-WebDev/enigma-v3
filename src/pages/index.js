@@ -8,6 +8,9 @@ import Whatwedo from '@/components/Home/Whatwedo';
 import About from '@/components/Home/About';
 import Services from '@/components/Home/Services';
 import CanvasAnimation from '@/components/Home/CanvasAnimation';
+import Testimonials from '@/components/Home/Testimonials';
+import Blogs from '@/components/Home/Blogs';
+import PortfolioSection from '@/components/Home/Cards';
 
 gsap.registerPlugin(useGSAP,ScrollTrigger)
 
@@ -21,7 +24,10 @@ export default function Home() {
       <Whatwedo/> 
       <Projects/>
       <Services/>
-      <CanvasAnimation/>
+      <Testimonials/>
+      <Blogs/>
+      <PortfolioSection/>
+      {/* <CanvasAnimation/> */}
 
      </main>
     </>
