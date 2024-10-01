@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CardMesh from "../Meshes/CardMesh";
+import CardMesh from "./CardMesh";
 import {
   View,
   PerspectiveCamera,

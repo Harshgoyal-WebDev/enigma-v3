@@ -11,6 +11,7 @@ import CanvasAnimation from '@/components/Home/CanvasAnimation';
 import Testimonials from '@/components/Home/Testimonials';
 import Blogs from '@/components/Home/Blogs';
 import PortfolioSection from '@/components/Home/Cards';
+import Brands from '@/components/Home/Brands';
 
 gsap.registerPlugin(useGSAP,ScrollTrigger)
 
@@ -27,7 +28,9 @@ export default function Home() {
       <Testimonials/>
       <Blogs/>
       <PortfolioSection/>
-      {/* <CanvasAnimation/> */}
+      {/* <Brands/>
+      <Whatwedo/>
+      {/* <CanvasAnimation/> */} 
 
      </main>
     </>
