@@ -28,9 +28,9 @@ export default function Home() {
       <Testimonials/>
       <Blogs/>
       <PortfolioSection/>
-      {/* <Brands/>
-      <Whatwedo/>
-      {/* <CanvasAnimation/> */} 
+       <Brands/>
+     {/* <Whatwedo/>
+       <CanvasAnimation/>  */}
 
      </main>
     </>
