@@ -18,7 +18,7 @@ const Whatwedo = () => {
                 end: "bottom top",
                 scrub: true,
                 pin: true,
-                markers: true,
+                // markers: true,
             }
         });
         tl.from(textRef.current, {

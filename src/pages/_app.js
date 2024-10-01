@@ -5,8 +5,7 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 import { DefaultSeo } from "next-seo";
 import {
   View,
-  Preload,
-  PerspectiveCamera,
+  Preload
 } from "@react-three/drei";
 export default function App({ Component, pageProps }) {
   const [rootElement, setRootElement] = useState(null);
