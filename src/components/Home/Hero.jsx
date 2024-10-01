@@ -57,7 +57,7 @@ const Hero = () => {
               <span className='text-primary-color hero-title-anim'> Experience</span><br />
               <span className='outline-text tracking-normal hero-title-anim'>Design Agency</span>
             </h1>
-            <p className='w-[50%] '>
+            <p className='w-[50%] text-[1.2vw] '>
               Harnessing the power of Emotion, Design, Technology & Neuromarketing, we create Digital Brand Experiences that propel your success in the enigmatic realm of bits & bytes.
             </p>
           </div>
@@ -78,6 +78,6 @@ const Hero = () => {
       </section>
     </>
   );
-}
+};
 
 export default Hero;

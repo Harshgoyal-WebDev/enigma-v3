@@ -18,7 +18,8 @@ body {
   background: var(--background);
   font-family: "GeneralSans";
   overflow-x: hidden;
-  
+  text-rendering: geometricPrecision;
+  -webkit-text-rendering:geometricPrecision;
 }
 
 @layer utilities {

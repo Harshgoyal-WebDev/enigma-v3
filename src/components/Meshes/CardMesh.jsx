@@ -21,25 +21,25 @@ export default function CardMesh() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#projects",
-        pin: true,
+       
         // markers: true,
-        start: "5% top",
+        start: "top top",
         end: "+=2000 top",
         scrub: true,
       },
     });
-     tl.to(".project-handles",{
-      xPercent:-75,
-      duration:5,
-      ease:"none"
-     })
+    //  tl.to(".project-handles",{
+    //   xPercent:-75,
+    //   duration:5,
+    //   ease:"none"
+    //  })
     // Move the group to the left
     tl.to(cardRef.current.position, {
       x: -10, 
       duration: 5,
       delay:-5,
       ease: "none",
-    });
+    }); 
 
     // Rotate each mesh individually on the y-axis
     cardRef.current.children.forEach((mesh, index) => {
@@ -49,6 +49,7 @@ export default function CardMesh() {
           y: mesh.rotation.y - Math.PI / 4, 
           duration: 5,
           ease: "none",
+          delay:-5
         },
         0
       ); 

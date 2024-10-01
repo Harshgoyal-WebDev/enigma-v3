@@ -28,9 +28,29 @@ const Projects = () => {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  useGSAP(()=>{
+    const tl = gsap.timeline({
+      scrollTrigger:{
+        trigger:"#projects",
+        scrub:true,
+        pin:true,
+        
+        start:"top top",
+        end:"+=2000 top"
+      }
+    })
+    tl.to(".project-handles",{
+      xPercent:-75,
+      duration:5,
+      ease:"none",
+      duration:5
+
+    
+    })
+  })
 
   return (
-    <section className="w-screen h-full mt-[10%] py-[5%] overflow-hidden " id="projects">
+    <section className="w-screen h-[100vh] py-[2%] overflow-hidden project-section relative" id="projects">
       <div className="w-full flex justify-between gap-[3vw] translate-x-[55%] project-handles">
         <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
@@ -82,12 +102,12 @@ const Projects = () => {
           <p className="text-[1.1vw] opacity-60">2023</p>
         </Link>
       </div>
-      <div className="w-full h-full">
+      <div className="w-full h-screen overflow-hidden card-mesh absolute top-[25%]">
         <View style={{ height: height, width: width }}>
-          <ambientLight intensity={1} /> Adjust ambient light intensity
-          {/* Adjust the point light position and intensity */}
+          <ambientLight intensity={1} /> 
+         
           <pointLight position={[-2, 0, 5]} intensity={1} color="white" />
-          {/* Adjust the directional light position and intensity */}
+          
           <directionalLight
             position={[0, 0, 5]}
             intensity={4}
@@ -98,9 +118,7 @@ const Projects = () => {
               mapSize: { width: 1024, height: 1024 },
             }}
           />
-          {/* Try adding helper to visualize lights during development */}
-          {/* <directionalLightHelper args={[directionalLight, 1]} /> */}
-          {/* <pointLightHelper args={[pointLight, 1]} /> */}
+          
           <fog attach="fog" color="white" near={9} far={12} />
           <PerspectiveCamera makeDefault fov={40} position={[0, 0, 10]} />
           <CardMesh />
