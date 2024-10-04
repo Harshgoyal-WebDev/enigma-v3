@@ -165,7 +165,7 @@ const CanvasAnimation = () => {
         clearInterval(intervalId);
       };
     };
-  }, []);
+  }, [angularB, b]);
 
   return <canvas ref={canvasRef} width={width} height={height} style={{ border: '1px solid black' }} />;
 };

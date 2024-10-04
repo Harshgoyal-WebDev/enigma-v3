@@ -6,7 +6,7 @@ import Lenis from '@studio-freight/lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Brands = () => {
+const Trial = () => {
   const mainRef = useRef(null);
   const gridsRef = useRef([]);
 
@@ -43,7 +43,7 @@ const Brands = () => {
           start: 'top 60%',
           end: '+=1000 top',
           scrub: true,
-        //   markers:true,
+          markers:true,
         //   pin:true
         },
       });
@@ -224,4 +224,4 @@ const Brands = () => {
   );
 };
 
-export default Brands;
+export default Trial;
