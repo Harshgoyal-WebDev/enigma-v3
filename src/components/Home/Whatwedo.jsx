@@ -29,7 +29,7 @@ const Whatwedo = () => {
     });
 
     return (
-        <section ref={containerRef} className='w-full h-screen' id='section-break'>
+        <section ref={containerRef} className='w-screen h-screen overflow-hidden' id='section-break'>
             <div className='container-lg h-full flex justify-center items-center'>
                 <h3 ref={textRef} className='text-center text-[4.5vw] font-medium text-black'>
                     We make cool things that do great business

@@ -7,19 +7,20 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-	screens:{
-		'mobile':{'max':'540px'},
-		'tablet':{'max':'1024px'}
-			
-	},
+  	screens: {
+  		mobile: {
+  			max: '540px'
+  		},
+  		tablet: {
+  			max: '1024px'
+  		}
+  	},
   	extend: {
-		
-
   		colors: {
-			"primary-color":"var(--primaryColor)",
-			"secondary-color":"var(--secondaryColor)",
-			"text-color":"var(--textColor)",
-			"heading-color":"var(--HeadingColor)",
+  			'primary-color': 'var(--primaryColor)',
+  			'secondary-color': 'var(--secondaryColor)',
+  			'text-color': 'var(--textColor)',
+  			'heading-color': 'var(--HeadingColor)',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -65,6 +66,28 @@ module.exports = {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
   		}
   	}
   },

@@ -183,4 +183,32 @@ export function paraAnimWordpress() {
     });
   });
 }
- nb 
+//  export function titleAnim(){
+//   useGSAP(() => {
+//      const  titleAnimations = document.querySelectorAll(".title-2");
+//      titleAnimations.forEach((title)=>{
+//        const tl = gsap.timeline({
+//          scrollTrigger:{
+//            trigger:title,
+//            start:"top 90%",
+//            scrub:true,
+//            markers:true
+  
+//          }
+//        })
+//        tl.from(".line1",{
+//          xPercent:-20,
+//          // opacity:0.2
+//        })
+//        tl.from(".line2",{
+//          xPercent:30,
+//          delay:-0.5,
+//          // opacity:0.2
+//        })
+//      })
+
+//      })
+
+    
+  
+//  }

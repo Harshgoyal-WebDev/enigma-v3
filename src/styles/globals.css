@@ -108,6 +108,11 @@ body {
   backdrop-filter: blur(10px);
   background: rgba(169, 169, 169, 0.084);
 }
+.white-glass{
+  backdrop-filter: blur(20px);
+  background: rgba(236, 236, 236, 0.705);
+
+}
 .title-1{
   font-size: 7.3vw;
   font-weight: 500;
@@ -116,6 +121,9 @@ body {
   font-weight: 500;
 }
 .title-2{
+  font-size: 4vw;
+  font-weight: 500;
+  font-family: 'LensGrotesk';
   color: var(--textColor);
 }
 .content{

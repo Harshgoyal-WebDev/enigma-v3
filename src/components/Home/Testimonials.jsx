@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
+import SectionTitle from "../SectionTitle";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Testimonials = () => {
@@ -11,15 +12,16 @@ const Testimonials = () => {
       scrollTrigger: {
         trigger: "#testimonials",
         pin: true,
-        scrub: true,
-        start: "top top",
+        scrub: 0.1,
+        start: "10% top",
         end: "+=3000 top",
       },
     });
 
     // Random rotation and vertical translation for each card
     tl.to(".testimonial-container", {
-      xPercent: -75,
+      xPercent: -100,
+      
     });
      
     tl.to(
@@ -27,8 +29,8 @@ const Testimonials = () => {
      
       {
         rotateZ: () => gsap.utils.random(-10, 10),
-        yPercent: () => gsap.utils.random(-5, 5),
-        xPercent: () => gsap.utils.random(-15, 15),
+        yPercent: () => gsap.utils.random(-10, 10),
+        xPercent: () => gsap.utils.random(-10, 10),
         delay:-0.5,
         ease: "power2.out", // You can adjust the easing here
       }
@@ -38,10 +40,13 @@ const Testimonials = () => {
     <>
       <section
         id="testimonials"
-        className="w-full h-screen bg-secondary-color py-[10%] overflow-hidden"
+        className="w-screen h-full bg-secondary-color py-[10%] pb-[15%] overflow-hidden"
       >
+          <div className="container-lg">
+            <SectionTitle line1={"What our"} line2={"Clients Have to say"}/>
+          </div>
         <div className="w-full h-full">
-          <div className="w-[200vw] flex flex-nowrap gap-[1vw] translate-x-[30%] testimonial-container">
+          <div className="w-[200vw] flex flex-nowrap gap-[1vw] translate-x-[50%] testimonial-container items-center h-full">
             <div className="w-[30vw] h-[30vw] rounded-[1vw] border test-card1 relative z-[2] glassmorphism flex flex-col px-[1.5vw] py-[1.5vw] pb-[3vw] text-white">
               <div className="w-full h-1/2 flex justify-between">
                 <div className="w-full flex flex-col gap-[0.5vw] pt-[1.5vw]">
