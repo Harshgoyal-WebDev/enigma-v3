@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Button from '../Button';
+import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 gsap.registerPlugin(ScrollTrigger,useGSAP);
 
@@ -30,20 +31,29 @@ const AboutCard = ({ color, no, text, src }) => {
   };
 
   return (
-    <div
-      ref={cardRef}
-      className={`about-card flex items-start justify-between h-[26.5vw] w-[42vw] rounded-[20px] px-[3vw] transition-all duration-100 bg-[#5d8f8f]/[0.1]`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
+    <CardContainer  
+    ref={cardRef}
+     onMouseEnter={handleMouseEnter}
+    onMouseLeave={handleMouseLeave}
+      className="flex  items-start justify-between"  >
+      <CardBody
+        
+      className={`about-card flex  justify-between items-start h-[26.5vw] w-[42vw] rounded-[20px] px-[3vw] transition-all duration-100 bg-[#5d8f8f]/[0.1]`}
     >
-      <div className="text-[5.7vw] ">{no}+</div>
+        <CardItem  as="p"
+          translateZ="60" 
+          className="text-[5.7vw] ">
+     {no}+
+      </CardItem>
       <div className="flex flex-col items-center justify-center h-full gap-[3vw] w-[50%]">
-        <div className="h-[10vw] w-[15vw] relative">
+        <CardItem translateZ="100"  className="h-[10vw] w-[15vw] relative">
           <Image src={src} fill alt="Awards" />
-        </div>
-        <div className="text-[2.9vw]  ">{text}</div>
+        </CardItem >
+        <CardItem as="p"
+          translateZ="60" className="text-[2.9vw]  ">{text}</CardItem>
       </div>
-    </div>
+      </CardBody>
+    </CardContainer>
   );
 };
 
@@ -62,8 +72,7 @@ const About = () => {
             },
           })
           .to(".about-card1" ,{
-            xPercent: 70,
-            
+            xPercent: 70,      
             zPercent:2,
             rotate:0,
             opacity: 1,

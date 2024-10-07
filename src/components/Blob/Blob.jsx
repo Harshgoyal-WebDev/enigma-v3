@@ -115,7 +115,7 @@ const Blob = ({ material, map, geometry }) => {
       rotation={rotationSpring.rotation}
       frustumCulled={false}
     >
-      <sphereGeometry args={[1, 512, 512]} rotation={rotate} />
+      <sphereGeometry args={[1.7, 512, 512]} rotation={rotate}/>
       <AnimatedMagicalMaterial map={texture} {...material} />
     </animated.mesh>
   );

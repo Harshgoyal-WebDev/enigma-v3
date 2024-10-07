@@ -1,13 +1,14 @@
-import React from "react";
+import React,{useEffect} from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import SectionTitle from "../SectionTitle";
+
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const Testimonials = () => {
-  useGSAP(() => {
+  useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#testimonials",
@@ -18,7 +19,6 @@ const Testimonials = () => {
       },
     });
 
-    // Random rotation and vertical translation for each card
     tl.to(".testimonial-container", {
       xPercent: -100,
       
@@ -32,7 +32,7 @@ const Testimonials = () => {
         yPercent: () => gsap.utils.random(-10, 10),
         xPercent: () => gsap.utils.random(-10, 10),
         delay:-0.5,
-        ease: "power2.out", // You can adjust the easing here
+        ease: "power2.out", 
       }
     );
   });

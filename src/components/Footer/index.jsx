@@ -4,7 +4,11 @@ import useUsefulHooks from "../Blob/hooks/useWheel";
 import { pages } from "../Blob/Text/data";
 import React from 'react';
 import Button from '../Button';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'; 
 import { View } from "@react-three/drei";
+
+gsap.registerPlugin(ScrollTrigger); 
 
 const Footer = () => {
   const [current, setCurrent] = useState(0);
@@ -13,33 +17,40 @@ const Footer = () => {
   useEffect(() => {
     if (lastAction) {
       if (lastAction === "next") {
-        if (current === pages.length - 1) {
-          setCurrent(0);
-        } else {
-          setCurrent(current + 1);
-        }
+        setCurrent(current === pages.length - 1 ? 0 : current + 1);
         console.log("next");
       }
       if (lastAction === "prev") {
-        if (current === 0) {
-          setCurrent(pages.length - 1);
-        } else {
-          setCurrent(current - 1);
-        }
+        setCurrent(current === 0 ? pages.length - 1 : current - 1);
         console.log("prev");
       }
     }
   }, [prevPage, nextPage, lastAction, current]);
 
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: "#footer", 
+      pin: true,
+      start: "top top",
+      end: "+=500",
+      scrub: true, 
+      markers: false 
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, []);
+
   return (
     <>
-      <section className="footer">
-        <div className="h-screen w-screen text-white flex flex-col items-center justify-between py-[3vw] rounded-t-[2.3vw] relative">
-          <div className="absolute inset-0 z-0">
+      <section id="footer">
+        <div className="h-screen w-screen relative text-white flex flex-col items-center justify-between py-[3vw] rounded-t-[2.3vw]">
+          <div className="absolute inset-0 z-[-1]">
             <SphereCanvas current={current} setCurrent={setCurrent} />
           </div>
-          <div className="relative text-center z-10 flex items-center justify-center flex-col h-full w-full gap-[2vw] ">
-            <h2 className="text-[3.9vw]">Let's Make Something</h2>
+          <div className="relative text-center z-10 flex items-center justify-center flex-col h-full w-full gap-[2vw]">
+            <h2 className="text-[3.9vw]">Let`&apos;s Make Something</h2>
             <h2 className="text-[5.2vw]">CREATIVE</h2>
             <div>
               <Button

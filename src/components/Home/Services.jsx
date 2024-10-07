@@ -52,7 +52,7 @@ const WorkCard = ({ heading }) => {
           onMouseLeave={handleMouseLeave}
         >
           <Image
-            src="/assets/home/id-card-strategy.webp"
+            src="/assets/home/id-card-strategy.png"
             alt="id-card"
             fill
             className="object-contain w-full h-full id-card-anim translate-y-[-10%]"
@@ -96,9 +96,10 @@ const Services = () => {
         },
       });
       tl.from(img, {
-        yPercent: -100,
+        yPercent: -50,
         ease: "elastic.out",
-        duration: 1.2,
+        duration: 1,
+        opacity:0
       });
     });
   });
@@ -106,7 +107,6 @@ const Services = () => {
   if (globalThis.innerWidth < 1024) {
   } else {
     useGSAP(() => {
-      // Timeline with pinning
       const tl1 = gsap.timeline({
         scrollTrigger: {
           trigger: ".works-container",
@@ -118,7 +118,6 @@ const Services = () => {
         },
       });
 
-      // Animations for pinned section
       tl1.from(".feature-container", {
         yPercent: 20,
         ease: "none",
@@ -160,11 +159,10 @@ const Services = () => {
           start: "+=3000 top",
           end: "+=5000 top",
           scrub: true,
-          // markers: true, // Uncomment for debugging
+          // markers: true, 
         },
       });
 
-      // Animations without pinning
       tl2.to(".feature-container3", {
         yPercent: -190,
         ease: "none",
