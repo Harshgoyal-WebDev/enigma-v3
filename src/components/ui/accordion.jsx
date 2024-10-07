@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 const Accordion = AccordionPrimitive.Root
 
 const AccordionItem = React.forwardRef(({ className, ...props }, ref) => (
-  <AccordionPrimitive.Item ref={ref} className={cn("border-b", className)} {...props} />
+  <AccordionPrimitive.Item ref={ref} className={cn("", className)} {...props} />
 ))
 AccordionItem.displayName = "AccordionItem"
 
@@ -16,7 +16,7 @@ const AccordionTrigger = React.forwardRef(({ className, children, ...props }, re
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 px-[3vw] font-medium transition-all [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>.icon-container>.icon]:rotate-[90deg] [&[data-state=open]>.icon-container>.icon>.minus]:rotate-90 [&[data-state=open]>.icon-container>.icon]:bg-body [&[data-state=open]>.icon-container>.icon]:text-body mobile:[&[data-state=open]>.icon-container>.icon]:rotate-[90deg] mobile:[&[data-state=open]>.icon-container>.icon>.minus]:rotate-90 mobile:[&[data-state=open]>.icon-container>.icon]:bg-body mobile:[&[data-state=open]>.icon-container>.icon]:text-white",
+        "flex flex-1 items-center justify-between px-[3vw] font-medium transition-all [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>.icon-container>.icon]:rotate-[90deg] [&[data-state=open]>.icon-container>.icon>.minus]:rotate-90 [&[data-state=open]>.icon-container>.icon]:bg-body [&[data-state=open]>.icon-container>.icon]:text-body mobile:[&[data-state=open]>.icon-container>.icon]:rotate-[90deg] mobile:[&[data-state=open]>.icon-container>.icon>.minus]:rotate-90 mobile:[&[data-state=open]>.icon-container>.icon]:bg-body mobile:[&[data-state=open]>.icon-container>.icon]:text-white",
         className
       )}
       {...props}>

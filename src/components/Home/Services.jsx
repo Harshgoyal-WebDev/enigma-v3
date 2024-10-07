@@ -3,7 +3,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import Button from "../Button";
+import Button from "../Button/PrimaryButton";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const WorkCard = ({ heading }) => {
@@ -76,7 +76,7 @@ const WorkCard = ({ heading }) => {
             Digital Capabilities Development, Persona Design & Customer
             Segmentation, Digital Marketing and Website Performance Audit.
           </p>
-      <Button btnText={"Read more"} link={"#"} classname={"border-white text-white "} invert={"invert"}/>
+      <Button btnText={"Read more"} link={"#"} classname={"border-white text-white bg-transparent "} invert={"invert"}/>
         </div>
       </div>
     </div>
@@ -182,7 +182,7 @@ const Services = () => {
 
   return (
     <section
-      className=" w-screen h-screen bg-transparent works-container mobile:h-full tablet:h-full my-[10%] overflow-hidden"
+      className=" w-screen h-screen bg-transparent works-container mobile:h-full tablet:h-full mt-[10%] overflow-hidden"
       id="work"
     >
       <div className="flex flex-col justify-center items-center relative">

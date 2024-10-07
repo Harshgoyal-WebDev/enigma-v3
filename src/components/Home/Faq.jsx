@@ -4,6 +4,11 @@ import { useRef } from "react";
 // import Section from "../Section";
 // import SectionTitle from "../SectionTitle";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import SectionTitle from "../SectionTitle";
+gsap.registerPlugin(useGSAP,ScrollTrigger)
 // import AccordionLine from "../AcoordionLine";
 
 const SingleAccordion = ({ id, title, content1, content2, btnLink, btnText }) => {
@@ -31,17 +36,41 @@ const SingleAccordion = ({ id, title, content1, content2, btnLink, btnText }) =>
 }
 
 const Faq = () => {
-    const containerRef = useRef(null);
+  
+    // fillAnimation()
+        const containerRef = useRef(null);
+        useGSAP(() => {
+            const body = document.body;
+        
+            const changeBodyColor = (color) => {
+              gsap.to(body, {
+                backgroundColor: color,
+                duration: 0.1, // Duration for smooth transition
+                ease: "power2.out",
+              });
+            };
+        
+            // ScrollTrigger for changing body background color
+            ScrollTrigger.create({
+              trigger: "#faq",
+              start: "top 80%", // When the section enters the viewport
+              end: "bottom 20%", // When the section is about to leave
+              onEnter: () => changeBodyColor("#f9f9f9"), // Replace with your actual secondary color
+              // onLeave: () => changeBodyColor("#ffffff"), // Revert to white when leaving
+              // onEnterBack: () => changeBodyColor("#"), // Reapply when scrolling back
+              onLeaveBack: () => changeBodyColor("#1d1d1d"), // Revert when scrolling back up
+            });})
+    
 
     return (
         <section className="py-[5%] mobile:pb-[15%]" id="faq">
             <div ref={containerRef} className="container-lg">
                 <div className="space-y-[2.5vw] mt-[5vw] mobile:space-y-[7vw]">
-                    
+                    <SectionTitle line1={"Frequently"} line2={"Asked questions"} firstColor={"text-secondary-color"}/>
                     
                 </div>
 
-                <div className="w-full ml-auto mt-[12vw] mobile:w-full tablet:w-full">
+                <div className="w-full ml-auto mt-[7vw] mobile:w-full tablet:w-full">
                     <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
                         <SingleAccordion
                             id="item-1"
@@ -92,4 +121,4 @@ const Faq = () => {
     )
 }
 
-export default Faq;
+export default Faq;

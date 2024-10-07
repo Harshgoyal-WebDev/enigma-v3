@@ -3,6 +3,8 @@
 @tailwind utilities;
 
 @import url('./font.css');
+@import url('./button.css');
+@import url('./faq.css');
 
 :root {
   --background: #f9f9f9;
@@ -27,6 +29,20 @@ body {
   overflow-x: hidden;
   text-rendering: geometricPrecision;
   -webkit-text-rendering:geometricPrecision;
+  transition: background-color 0.7s ease-in-out;
+
+}
+
+.grid-container{
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+}
+.grid-lines{
+  height: 100%;
+  width: 1px;
+  background: var(--secondaryColor);
+  opacity: 0.15;
 }
 
 @layer utilities {

@@ -3,10 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { DefaultSeo } from "next-seo";
-import {
-  View,
-  Preload
-} from "@react-three/drei";
+import { View, Preload } from "@react-three/drei";
 export default function App({ Component, pageProps }) {
   const [rootElement, setRootElement] = useState(null);
   const [width, setWidth] = useState(0);
@@ -19,8 +16,8 @@ export default function App({ Component, pageProps }) {
     const handleResize = () => {
       setWidth(window.innerWidth);
       setHeight(window.innerHeight);
-    }
-  }, [])
+    };
+  }, []);
   return (
     <>
       <DefaultSeo
@@ -45,16 +42,26 @@ export default function App({ Component, pageProps }) {
         ]}
       />
       <ReactLenis root lerp={0.3}>
-
         <Component {...pageProps} />
-        <Canvas className="view"
+        <div className="grid-container absolute z-[-1] top-0 left-0 flex justify-between">
+          <div className="grid-lines"></div>
+          <div className="grid-lines"></div>
+          <div className="grid-lines"></div>
+          <div className="grid-lines"></div>
+          <div className="grid-lines"></div>
+          <div className="grid-lines"></div>
+          <div className="grid-lines"></div>
+          <div className="grid-lines"></div>
+        </div>
+        <Canvas
+          className="view"
           style={{
             position: "fixed",
             top: 0,
             bottom: 0,
             left: 0,
             right: 0,
-            pointerEvents: "none"
+            pointerEvents: "none",
           }}
           eventSource={rootElement}
         >
@@ -63,6 +70,5 @@ export default function App({ Component, pageProps }) {
         </Canvas>
       </ReactLenis>
     </>
-  )
-
+  );
 }

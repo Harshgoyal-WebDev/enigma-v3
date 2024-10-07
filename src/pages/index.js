@@ -14,6 +14,7 @@ import PortfolioSection from '@/components/Home/Cards';
 import Brands from '@/components/Home/Brands';
 import Faq from '@/components/Home/Faq';
 import Footer from '@/components/Footer';
+import Testfill from '@/components/Testfill';
 
 gsap.registerPlugin(useGSAP,ScrollTrigger)
 
@@ -30,6 +31,7 @@ export default function Home() {
       <Brands/>
       <Testimonials/>
       <Blogs/>
+      {/* <Testfill/> */}
       <Faq/>
       {/* <PortfolioSection/> */}
        

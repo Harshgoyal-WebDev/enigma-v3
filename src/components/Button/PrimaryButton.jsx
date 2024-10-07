@@ -2,12 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const Button = ({ link, btnText, classname , invert }) => {
+const PrimaryButton = ({ link, btnText, classname , invert }) => {
   return (
     <>
       <div className="w-full flex gap-[0.3vw]">
         <Link href={link}>
-          <div className={`w-fit min-w-[7vw] bg-transparent border border-secondary-color px-[3vw] py-[0.7vw] text-[1.3vw] rounded-full ${classname}`}>
+          <div className={`w-fit min-w-[7vw] bg-[#f9f9f9] border border-secondary-color px-[3vw] py-[0.7vw] text-[1.3vw] rounded-full ${classname}`}>
             {btnText}
           </div>
         </Link>
@@ -19,4 +19,4 @@ const Button = ({ link, btnText, classname , invert }) => {
   );
 };
 
-export default Button;
+export default PrimaryButton;

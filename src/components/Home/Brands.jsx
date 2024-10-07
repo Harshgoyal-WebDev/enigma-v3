@@ -39,12 +39,12 @@ const Brands = () => {
 
       const timeline = gsap.timeline({
         scrollTrigger: {
-          trigger: gridWrap,
-          start: 'top 60%',
-          end: '+=1000 top',
+          trigger: "#brands",
+          start: 'top top',
+          end: 'bottom top',
           scrub: true,
-        //   markers:true,
-        //   pin:true
+          // markers:true,
+          // pin:true
         },
       });
       const animationType = 'type3'; 
@@ -108,7 +108,7 @@ const Brands = () => {
   };
 
   return (
-    <section className="loading w-screen h-screen relative">
+    <section className="loading w-screen h-screen relative overflow-hidden mt-[10%]" id='brands'>
       <div ref={mainRef} className='relative w-full h-screen mt-[2vw] '>
         <section className="content absolute mb-[2vw] top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] ">
           <div className="grid grid--1 p-[2vw] w-full" ref={addToGridsRef}>

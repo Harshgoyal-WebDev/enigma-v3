@@ -1,0 +1,119 @@
+/*--------------------Buttons CSS Start-------------------*/
+.btn_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 10vw;
+    width: 10vw;
+}
+
+.btn-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8vw;
+  height: 8vw;
+  font-weight: 500;
+  font-size: 1.2vw;
+  line-height: 1.2;
+  color: white;
+  text-transform: capitalize;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s ease-out;
+}
+
+.btn-item {
+    position: absolute;
+  }
+
+.btn-white span {
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  left: 0;
+  top: 0;
+  color: white;
+  background-color: white;
+  z-index: -1;
+  border-radius: 100%;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn-white:hover{
+    color: black;
+}
+
+.btn-white:hover span {
+  width: 350px;
+  height: 350px;
+}
+
+/* screen size for mobile */
+@media  screen and (max-width:540px) {
+  .btn_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 25vw;
+    width: 25vw;
+}
+.btn-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22vw;
+  height: 22vw;
+  font-family: Satoshi, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 4vw;
+  line-height: 1.2;
+  color: white;
+  text-transform: capitalize;
+  border: 1px solid white;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s ease-out;
+}
+  
+}
+/* screen size for tablet */
+@media  screen and (min-width:540px) and (max-width:1023px) {
+  .btn_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 20vw;
+    width: 20vw;
+}
+.btn-white {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18vw;
+  height: 18vw;
+  font-family: Satoshi, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 3vw;
+  line-height: 1.2;
+  color: white;
+  text-transform: capitalize;
+  border: 1px solid white;
+  border-radius: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.5s ease-out;
+}
+  
+}
+/*-----------------Buttons CSS End--------------------------*/

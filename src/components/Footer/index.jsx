@@ -3,7 +3,7 @@ import SphereCanvas from "../Blob/SphereCanvas";
 import useUsefulHooks from "../Blob/hooks/useWheel";
 import { pages } from "../Blob/Text/data";
 import React from 'react';
-import Button from '../Button';
+import Button from '../Button/PrimaryButton';
 import { View } from "@react-three/drei";
 
 const Footer = () => {

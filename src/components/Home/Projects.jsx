@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CardMesh from "./CardMesh";
+import CardMesh from "../Meshes/CardMesh";
 import {
   View,
   PerspectiveCamera,
@@ -9,9 +9,13 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
+import SectionTitle from "../SectionTitle";
+import Button from "../Button/PrimaryButton";
 gsap.registerPlugin(useGSAP,ScrollTrigger)
+// import { titleAnim } from "../gsapAnimations";
 
 const Projects = () => {
+  // titleAnim()
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -35,7 +39,7 @@ const Projects = () => {
         scrub:true,
         pin:true,
         
-        start:"top top",
+        start:"25% top",
         end:"+=2000 top"
       }
     })
@@ -51,6 +55,13 @@ const Projects = () => {
 
   return (
     <section className="w-screen h-[100vh] py-[2%] overflow-hidden project-section relative" id="projects">
+      <div className="container-lg w-screen flex justify-between items-center mb-[3vw]">
+        <SectionTitle line1={"See Our"} line2={"Work"} firstColor={"text-secondary-color"}/>
+        <div>
+
+        <Button link={"#"} btnText={"View More"}/>
+        </div>
+      </div>
       <div className="w-full flex justify-between gap-[3vw] translate-x-[55%] project-handles">
         <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>

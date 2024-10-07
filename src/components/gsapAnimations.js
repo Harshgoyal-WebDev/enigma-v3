@@ -4,6 +4,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { CustomEase } from "gsap/dist/CustomEase";
 import { SplitInLine } from "./splitTextUtils";
+import { useEffect } from "react";
+import $ from 'jquery';
+
 
 gsap.registerPlugin(ScrollTrigger, CustomEase, useGSAP);
 
@@ -183,32 +186,61 @@ export function paraAnimWordpress() {
     });
   });
 }
-//  export function titleAnim(){
-//   useGSAP(() => {
-//      const  titleAnimations = document.querySelectorAll(".title-2");
-//      titleAnimations.forEach((title)=>{
-//        const tl = gsap.timeline({
-//          scrollTrigger:{
-//            trigger:title,
-//            start:"top 90%",
-//            scrub:true,
-//            markers:true
+ export function titleAnim(){
+  useGSAP(() => {
+     const  titleAnimations = document.querySelectorAll(".title-animation");
+     titleAnimations.forEach((title)=>{
+       const tl = gsap.timeline({
+         scrollTrigger:{
+           trigger:title,
+           start:"top 90%",
+           scrub:true,
+           markers:true
   
-//          }
-//        })
-//        tl.from(".line1",{
-//          xPercent:-20,
-//          // opacity:0.2
-//        })
-//        tl.from(".line2",{
-//          xPercent:30,
-//          delay:-0.5,
-//          // opacity:0.2
-//        })
-//      })
+         }
+       })
+       tl.from(".line1",{
+         xPercent:-30,
+         // opacity:0.2
+       })
+       tl.from(".line2",{
+         xPercent:20,
+         delay:-0.5,
+         // opacity:0.2
+       })
+     })
 
-//      })
+     })
 
     
   
-//  }
+ }
+
+ export function fillAnimation(){
+  
+  useEffect(()=> {
+    const fillAnimation = document.querySelectorAll(".fillAnim")
+    fillAnimation.forEach((fillAnim) => {
+      $(fillAnim).on('mouseenter', function (e) {
+          var x = e.pageX - $(this).offset().left;
+          var y = e.pageY - $(this).offset().top;
+  
+          $(this).find('span').css({
+          top: y,
+          left: x
+          });
+      });
+  
+      $(fillAnim).on('mouseout', function (e) {
+          var x = e.pageX - $(this).offset().left;
+          var y = e.pageY - $(this).offset().top;
+  
+          $(this).find('span').css({
+          top: y,
+          left: x
+          });
+      });
+    })
+  }, [])
+
+ }
