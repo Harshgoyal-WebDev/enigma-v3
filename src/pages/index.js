@@ -15,6 +15,7 @@ import Brands from '@/components/Home/Brands';
 import Faq from '@/components/Home/Faq';
 import Footer from '@/components/Footer';
 import Testfill from '@/components/Testfill';
+import Header from '@/components/Header';
 
 gsap.registerPlugin(useGSAP,ScrollTrigger)
 
@@ -22,6 +23,7 @@ export default function Home() {
   
   return (
     <>
+    <Header/>
      <main>
       <Hero/>
       <About/>

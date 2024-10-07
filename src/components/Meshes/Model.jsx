@@ -84,23 +84,23 @@ export default function Model() {
       },
     });
 
-    tl.to(modelMeshRef.current.rotation, {
-      y: Math.PI * 2,
-      duration: 4,
-    })
-      .to(modelMeshRef.current.position, {
-        delay: -5.2,
-        x: 0,
+    // tl.to(modelMeshRef.current.rotation, {
+    //   y: Math.PI * 2,
+    //   duration: 4,
+    // })
+     tl .to(modelMeshRef.current.position, {
+        delay: -1,
+        x: -0.5,
         y: 0,
         z: 1,
-        duration: 6,
+        duration: 4,
         ease: "none",
       })
       .to(modelMeshRef.current.position, {
         z: 20,
         y: 0,
         x: 0,
-        duration: 8,
+        duration: 4,
         delay: 0,
         ease: "none",
       });

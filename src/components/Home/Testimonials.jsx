@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Image from "next/image";
 import SectionTitle from "../SectionTitle";
+
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 // import { titleAnim } from "../gsapAnimations";
 
 const Testimonials = () => {
+ 
   // titleAnim()
   const testimonialsRef = useRef(null);
 
@@ -45,7 +47,6 @@ const Testimonials = () => {
       },
     });
 
-    // Random rotation and vertical translation for each card
     tl.to(".testimonial-container", {
       xPercent: -100,
     });

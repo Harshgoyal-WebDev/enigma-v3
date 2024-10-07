@@ -116,98 +116,112 @@ const Brands = () => {
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/bespin.png"
+                  src="/assets/icons/bespin.svg"
                   alt="Image 1"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/dmtca.png"
+                  src="/assets/icons/dmtca.svg"
                   alt="Image 2"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/jellyfish.png"
+                  src="/assets/icons/jellyfish.svg"
                   alt="Image 3"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/kedarkala.png"
+                  src="/assets/icons/kedarkala.svg"
                   alt="Image 4"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/patra.png"
+                  src="/assets/icons/patra.svg"
                   alt="Image 5"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/quickx.png"
+                  src="/assets/icons/quickx.svg"
                   alt="Image 6"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/riva.png"
+                  src="/assets/icons/rivaj.svg"
                   alt="Image 7"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/bespin.png"
+                  src="/assets/icons/yellow.svg"
+                  alt="Image 7"
+                />
+              </div>
+              <div className="grid__item">
+                <img
+                  className="grid__item-inner"
+                  src="/assets/icons/bespin.svg"
                   alt="Image 1"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/dmtca.png"
+                  src="/assets/icons/dmtca.svg"
                   alt="Image 2"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/jellyfish.png"
+                  src="/assets/icons/jellyfish.svg"
                   alt="Image 3"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/kedarkala.png"
+                  src="/assets/icons/kedarkala.svg"
                   alt="Image 4"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/patra.png"
+                  src="/assets/icons/patra.svg"
                   alt="Image 5"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/quickx.png"
+                  src="/assets/icons/quickx.svg"
                   alt="Image 6"
                 />
               </div>
               <div className="grid__item">
                 <img
                   className="grid__item-inner"
-                  src="/assets/home/riva.png"
+                  src="/assets/icons/rivaj.svg"
+                  alt="Image 7"
+                />
+              </div>
+              <div className="grid__item">
+                <img
+                  className="grid__item-inner"
+                  src="/assets/icons/yellow.svg"
                   alt="Image 7"
                 />
               </div>
@@ -217,7 +231,7 @@ const Brands = () => {
         </section>
       </div>
       <div className='grotesk text-[4vw] font-medium text-primary-color absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%]'>
-        Brands we've elevated
+        Brands we&apos;ve elevated
       </div>
 
     </section>

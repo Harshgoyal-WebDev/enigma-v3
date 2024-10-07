@@ -208,4 +208,7 @@ color: transparent;
   background-size: contain;
   background-position: 50% 50%;
 }
+.negative{
+  z-index: -5 !important;
+}
 
