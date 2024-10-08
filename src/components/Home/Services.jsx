@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import Button from "../Button/PrimaryButton";
+import BlackButton from "../Button/BlackButton";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const WorkCard = ({ heading }) => {
@@ -76,7 +77,10 @@ const WorkCard = ({ heading }) => {
             Digital Capabilities Development, Persona Design & Customer
             Segmentation, Digital Marketing and Website Performance Audit.
           </p>
-      <Button btnText={"Read more"} link={"#"} classname={"border-white text-white bg-transparent "} invert={"invert"}/>
+          <div className="w-fit h-fit">
+
+      <BlackButton btnText={"Read more"} link={"#"} classname={"border-white text-white bg-transparent "} invert={""}/>
+          </div>
         </div>
       </div>
     </div>

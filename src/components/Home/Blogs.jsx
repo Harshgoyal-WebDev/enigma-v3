@@ -6,6 +6,7 @@ import Image from "next/image";
 import Button from "../Button/PrimaryButton";
 import SectionTitle from "../SectionTitle";
 import Link from "next/link";
+import BlackButton from "../Button/BlackButton";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 
@@ -85,7 +86,7 @@ const Blogs = () => {
             
             </div>
             <div className="flex items-end">
-              <Button
+              <BlackButton
                 btnText={"Read more"}
                 link={"#"}
                 classname={"border-white text-white bg-transparent"}

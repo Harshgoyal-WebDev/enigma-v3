@@ -25,7 +25,7 @@
   
     position: relative;
     display: inline-block;
-    height: 6em;
+    
    
   
     color: white;
@@ -53,7 +53,7 @@
     height: 0;
     
     border-radius: 100%;
-    background: #1d1d1d;
+    
     
     transform: translate(-50%, -50%);
     transition: width var(--time), padding-top var(--time);

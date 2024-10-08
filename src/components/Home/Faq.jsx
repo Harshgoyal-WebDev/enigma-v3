@@ -13,7 +13,7 @@ gsap.registerPlugin(useGSAP,ScrollTrigger)
 
 const SingleAccordion = ({ id, title, content1, content2, btnLink, btnText }) => {
     return (
-        <AccordionItem value={id} className="group relative">
+        <AccordionItem value={id} className="group relative bg-[#f9f9f9]">
             {/* <AccordionLine className="relative z-[-1] my-[1vw] tablet:hidden mobile:hidden"/> */}
             <div className="w-full bg-black lineDraw h-[1px]  mobile:block tablet:block"></div>
             <div className="absolute bg-secondary-color w-full h-full scale-y-0 group-hover:scale-y-[1] origin-top transition-all duration-500 ease-out"></div>

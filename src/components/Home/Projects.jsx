@@ -33,6 +33,7 @@ const Projects = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   useGSAP(()=>{
+
     const tl = gsap.timeline({
       scrollTrigger:{
         trigger:"#projects",
@@ -43,12 +44,26 @@ const Projects = () => {
         end:"+=2000 top"
       }
     })
+    // gsap.from(".project-handles",{
+    //   xPercent:20,
+    //   duration:2,
+    //   ease:"none",
+    //    scrollTrigger:{
+    //     trigger:"#projects",
+    //     scrub:true,
+    //     start:"top bottom",
+    //     end:"bottom 40%",
+    //     markers:true
+    //     }
+       
+    
+    // })
     tl.to(".project-handles",{
       xPercent:-75,
       duration:5,
       ease:"none",
-      duration:5
-
+      duration:5,
+       
     
     })
   })

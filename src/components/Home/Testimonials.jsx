@@ -41,7 +41,7 @@ const Testimonials = () => {
         trigger: "#testimonials",
         pin: true,
         scrub: 0.1,
-        start: "10% top",
+        start: "20% top",
         end: "+=3000 top",
         // markers: true,
       },
