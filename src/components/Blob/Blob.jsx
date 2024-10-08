@@ -105,7 +105,7 @@ const Blob = ({ material, map, geometry }) => {
       window.removeEventListener("wheel", handleWheel);
       clearTimeout(scrollTimeout);
     };
-  }, []);
+  }, [handleWheel, scrollTimeout]);
 
   return (
     <animated.mesh

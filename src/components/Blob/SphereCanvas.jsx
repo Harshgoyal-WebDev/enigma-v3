@@ -12,13 +12,13 @@ import useUsefulHooks from "../Blob/hooks/useWheel";
 const SphereCanvas = ({ current, setCurrent }) => {
   const { prevPage, nextPage, lastAction } = useUsefulHooks();
 
-  const { bg, ambient, lights, ...setting } = useMemo(
+  const { bg,ambient, lights, ...setting } = useMemo(
     () => BlobSetting[pages[current].name],
     [nextPage, prevPage, current]
   );
 
   return (
-    <View style={{ background: bg }} className="w-screen h-screen z-[-5] overflow-hidden negative">
+    <View style={{ background:bg }} className="w-screen h-screen z-[-5] overflow-hidden negative">
       <animated.mesh camera={{ position: [0, 0, 4], fov: 50 }}>
         <ambientLight intensity={ambient} />
         <Lights lights={lights} />

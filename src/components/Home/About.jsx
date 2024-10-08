@@ -4,7 +4,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Button from '../Button/PrimaryButton';
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 gsap.registerPlugin(ScrollTrigger,useGSAP);
 
@@ -31,29 +30,25 @@ const AboutCard = ({ color, no, text, src }) => {
   };
 
   return (
-    <CardContainer  
+    <div  
     ref={cardRef}
-     onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
-      className="flex  items-start justify-between"  >
-      <CardBody
-        
-      className={`about-card flex  justify-between items-start h-[26.5vw] w-[42vw] rounded-[20px] px-[3vw] transition-all duration-100 bg-[#5d8f8f]/[0.1]`}
+      className="flex  items-start justify-between rounded-[20px] bg-gray-200  transition-all duration-100"  
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
+      <div
+      className={`about-card flex  justify-between items-start h-[26.5vw] w-[42vw] rounded-[20px] px-[3vw] transition-all duration-100 `}
     >
-        <CardItem  as="p"
-          translateZ="60" 
-          className="text-[5.7vw] ">
+        <div className="text-[5.7vw] ">
      {no}+
-      </CardItem>
-      <div className="flex flex-col items-center justify-center h-full gap-[3vw] w-[50%]">
-        <CardItem translateZ="100"  className="h-[10vw] w-[15vw] relative">
-          <Image src={src} fill alt="Awards" />
-        </CardItem >
-        <CardItem as="p"
-          translateZ="60" className="text-[2.9vw]  ">{text}</CardItem>
       </div>
-      </CardBody>
-    </CardContainer>
+      <div className="flex flex-col items-center justify-center h-full gap-[3vw] w-[50%]">
+        <div  className="h-[10vw] w-[15vw] relative">
+          <Image src={src} fill alt="Awards" />
+        </div >
+        <div  className="text-[2.9vw]  ">{text}</div>
+      </div>
+      </div>
+    </div>
   );
 };
 
@@ -127,17 +122,17 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-[10vw] pb-[5vw] flex flex-wrap gap-[1vw] items-center justify-center about-cards-container">
-          <div className=' translate-x-[-70%] opacity-0 about-card1 -rotate-[60deg] about-cards'>
+        <div className="mt-[10vw] pb-[5vw] flex flex-wrap gap-[3vw] items-center justify-center about-cards-container">
+          <div className=' translate-x-[-70%] opacity-0 about-card1 -rotate-[45deg] about-cards'>
             <AboutCard color={'#ff6b00'} no={12} text={"Awards & Recognition"} src={"/assets/home/awards.png"} />
           </div>
-          <div className='translate-y-[50%] translate-x-[70%] opacity-0 about-card2  rotate-[60deg] about-cards'>
+          <div className='translate-y-[40%] translate-x-[70%] opacity-0 about-card2  rotate-[45deg] about-cards'>
             <AboutCard color={'#734eff'} no={20} text={"Projects Complete"} src={"/assets/home/awards.png"} />
           </div>
-          <div className='translate-x-[-70%] opacity-0 about-card3  -rotate-[60deg] about-cards'>
+          <div className='translate-x-[-70%] opacity-0 about-card3  -rotate-[45deg] about-cards'>
             <AboutCard color={'#a5ffb9'} no={10} text={"Years of Experience"} src={"/assets/home/awards.png"} />
           </div>
-          <div className='translate-y-[50%] translate-x-[70%] opacity-0 about-card4  rotate-[60deg] about-cards'>
+          <div className='translate-y-[40%] translate-x-[70%] opacity-0 about-card4  rotate-[45deg] about-cards'>
             <AboutCard color={'#ffe974'} no={45} text={"Happy Customers"} src={"/assets/home/awards.png"} />
           </div>
         </div>

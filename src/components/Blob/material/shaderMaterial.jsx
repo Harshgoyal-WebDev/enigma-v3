@@ -24,4 +24,7 @@ export const MagicalMaterial = forwardRef(({ ...props }, ref) => {
   );
 });
 
+// Set the display name for the component
+MagicalMaterial.displayName = "MagicalMaterial";
+
 export default MagicalMaterial;

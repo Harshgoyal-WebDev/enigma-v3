@@ -64,7 +64,7 @@ export const UsefulProvider = (props) => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("wheel", handleWheel);
     };
-  }, [hasDetectedDirection]);
+  }, [hasDetectedDirection , handleWheel, handleKeyDown]);
 
   
   return (

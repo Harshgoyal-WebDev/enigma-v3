@@ -60,13 +60,13 @@ const WorkCard = ({ heading }) => {
         </div>
         <div className="w-1/2 h-full flex flex-col gap-[1.5vw] text-white justify-center">
           <h3 className="text-[4.5vw] uppercase text-start">{heading}</h3>
-          <p className="text-[1.3vw]">
+          <p className="text-[1.1vw] w-[90%]">
             Strategic planning based on insight is the starting point of
             everything we do. Combining strategic thinking, wide marketing
             experience, insights, best practices, and sound judgment, we craft
             effective strategies that turn insights into measurable results.
           </p>
-          <p className="text-[1.3vw] mb-[1vw]">
+          <p className="text-[1.1vw] mb-[1vw] w-[90%]">
             Driving growth and success for your brand needs a brilliant plan
             (roadmap) that is rooted in deep insights and aimed at delivering
             tangible results. Our strategy consulting services includes:
