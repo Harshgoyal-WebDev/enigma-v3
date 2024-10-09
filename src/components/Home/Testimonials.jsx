@@ -41,24 +41,40 @@ const Testimonials = () => {
         trigger: "#testimonials",
         pin: true,
         scrub: 0.1,
-        start: "20% top",
-        end: "+=3000 top",
+        start: "30% top",
+        end: "+=1500 top",
         // markers: true,
       },
     });
 
-    tl.to(".testimonial-container", {
+    gsap.to(".testimonial-container", {
       xPercent: -100,
+      scrollTrigger:{
+        trigger:"#testimonials",
+        start: "top 60%",
+        end:"+=3000 top",
+        // markers:true,
+        scrub:true
+
+      }
     });
 
-    tl.to(
+    gsap.to(
       ".test-card1, .test-card2, .test-card3, .test-card4, .test-card5, .test-card6",
       {
         rotateZ: () => gsap.utils.random(-10, 10),
         yPercent: () => gsap.utils.random(-10, 10),
         xPercent: () => gsap.utils.random(-10, 10),
         delay: -0.5,
-        ease: "power2.out",
+        ease: "power1.out",
+        scrollTrigger:{
+          trigger:"#testimonials",
+          start: "top 60%",
+          end:"+=3000 top",
+          // markers:true,
+          scrub:true
+  
+        }
       }
     );
   });
@@ -67,9 +83,10 @@ const Testimonials = () => {
       <section
         id="testimonials"
         ref={testimonialsRef}
-        className={`w-screen h-full py-[10%] pb-[15%] overflow-hidden transition-colors duration-700`}
+        className={`w-screen h-full pt-[10%] transition-colors duration-700`}
       >
-          <div className="container-lg">
+        <div className="flex flex-col w-full h-[120vh] justify-between">
+          <div className="px-[5vw] mb-[6vw]">
             <SectionTitle line1={"What our"} line2={"Clients Have to say"} firstColor={"text-white"}/>
           </div>
         <div className="w-full h-full">
@@ -279,6 +296,8 @@ const Testimonials = () => {
               </div>
             </div>
           </div>
+        </div>
+
         </div>
       </section>
     </>

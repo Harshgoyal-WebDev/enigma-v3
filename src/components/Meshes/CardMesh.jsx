@@ -23,8 +23,8 @@ export default function CardMesh() {
         trigger: "#projects",
        
         // markers: true,
-        start: "25% top",
-        end: "+=2000 top",
+        start: "top 70%",
+        end: "+=2200 top",
         scrub: true,
       },
     });
@@ -35,7 +35,7 @@ export default function CardMesh() {
     //  })
     // Move the group to the left
     tl.to(cardRef.current.position, {
-      x: -10, 
+      x: -16, 
       duration: 5,
       delay:-5,
       ease: "none",
@@ -46,7 +46,7 @@ export default function CardMesh() {
       tl.to(
         mesh.rotation,
         {
-          y: mesh.rotation.y - Math.PI / 4, 
+          y: mesh.rotation.y - Math.PI / 3, 
           duration: 5,
           ease: "none",
           delay:-5
@@ -59,7 +59,7 @@ export default function CardMesh() {
   return (
     <>
       <group ref={cardRef} position={[0, 0, 0]}>
-        <mesh position={[1, -0.8, 0]} rotation={[0, -1.6, 0]}>
+        <mesh position={[5, -0.8, 0]} rotation={[0, -1.6, 0]}>
           <boxGeometry args={[3.5, 4, 0.1]} />
           <meshStandardMaterial attach="material-0" color="blue" />{" "}
           <meshStandardMaterial attach="material-1" color="blue" />{" "}
@@ -68,7 +68,7 @@ export default function CardMesh() {
           <meshStandardMaterial attach="material-4" map={texture1} />{" "}
           <meshStandardMaterial attach="material-5" map={texture1} />
         </mesh>
-        <mesh position={[3, -0.8, 0]} rotation={[0, -1.4, 0]}>
+        <mesh position={[7, -0.8, 0]} rotation={[0, -1.4, 0]}>
           <boxGeometry args={[3.5, 4, 0.1]} />
           <meshStandardMaterial attach="material-0" color="red" />{" "}
           <meshStandardMaterial attach="material-1" color="red" />{" "}
@@ -77,7 +77,7 @@ export default function CardMesh() {
           <meshStandardMaterial attach="material-4" map={texture2} />{" "}
           <meshStandardMaterial attach="material-5" map={texture2} />
         </mesh>
-        <mesh position={[5, -0.8, 0]} rotation={[0, -1.2, 0]}>
+        <mesh position={[9, -0.8, 0]} rotation={[0, -1.2, 0]}>
           <boxGeometry args={[3.5, 4, 0.1]} />
           <meshStandardMaterial attach="material-0" color="green" />{" "}
           <meshStandardMaterial attach="material-1" color="green" />{" "}
@@ -86,7 +86,7 @@ export default function CardMesh() {
           <meshStandardMaterial attach="material-4" map={texture3} />{" "}
           <meshStandardMaterial attach="material-5" map={texture3} />
         </mesh>
-        <mesh position={[7, -0.8, 0]} rotation={[0, -1, 0]}>
+        <mesh position={[11, -0.8, 0]} rotation={[0, -1, 0]}>
           <boxGeometry args={[3.5, 4, 0.1]} />
           <meshStandardMaterial attach="material-0" color="hotpink" />{" "}
           <meshStandardMaterial attach="material-1" color="hotpink" />{" "}
@@ -95,7 +95,7 @@ export default function CardMesh() {
           <meshStandardMaterial attach="material-4" map={texture4} />{" "}
           <meshStandardMaterial attach="material-5" map={texture4} />
         </mesh>
-        <mesh position={[9, -0.8, 0]} rotation={[0, -0.8, 0]}>
+        <mesh position={[13, -0.8, 0]} rotation={[0, -0.8, 0]}>
           <boxGeometry args={[3.5, 4, 0.1]} />
           <meshStandardMaterial attach="material-0" color="black" />{" "}
           <meshStandardMaterial attach="material-1" color="black" />{" "}
@@ -104,7 +104,7 @@ export default function CardMesh() {
           <meshStandardMaterial attach="material-4" map={texture5} />{" "}
           <meshStandardMaterial attach="material-5" map={texture5} />
         </mesh>
-        <mesh position={[11,-0.8, 0]} rotation={[0, -0.6, 0]}>
+        <mesh position={[15,-0.8, 0]} rotation={[0, -0.6, 0]}>
           <boxGeometry args={[3.5, 4, 0.1]} />
           <meshStandardMaterial attach="material-0" color="yellow" />{" "}
           <meshStandardMaterial attach="material-1" color="yellow" />{" "}
@@ -113,7 +113,7 @@ export default function CardMesh() {
           <meshStandardMaterial attach="material-4" map={texture6} />{" "}
           <meshStandardMaterial attach="material-5" map={texture6} />
         </mesh>
-        <mesh position={[13,-0.8, 0]} rotation={[0, -0.4, 0]}>
+        <mesh position={[17,-0.8, 0]} rotation={[0, -0.4, 0]}>
           <boxGeometry args={[3.5, 4, 0.1]} />
           <meshStandardMaterial attach="material-0" color="cyan" />{" "}
           <meshStandardMaterial attach="material-1" color="cyan" />{" "}

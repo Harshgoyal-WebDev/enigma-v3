@@ -40,87 +40,82 @@ const Projects = () => {
         scrub:true,
         pin:true,
         
-        start:"25% top",
-        end:"+=2000 top"
+        start:"23% top",
+        end:"+=1500 top"
       }
     })
-    // gsap.from(".project-handles",{
-    //   xPercent:20,
-    //   duration:2,
-    //   ease:"none",
-    //    scrollTrigger:{
-    //     trigger:"#projects",
-    //     scrub:true,
-    //     start:"top bottom",
-    //     end:"bottom 40%",
-    //     markers:true
-    //     }
-       
-    
-    // })
-    tl.to(".project-handles",{
-      xPercent:-75,
+    gsap.to(".project-handles",{
+      xPercent:-120,
       duration:5,
+      
       ease:"none",
-      duration:5,
+       scrollTrigger:{
+        trigger:"#projects",
+        scrub:true,
+        start:"top 70%",
+        end:"+=2200 top",
+        // markers:true
+        }
+
        
     
     })
+   
   })
 
   return (
-    <section className="w-screen h-[100vh] py-[2%] overflow-hidden project-section relative" id="projects">
-      <div className="container-lg w-screen flex justify-between items-center mb-[3vw]">
+    <section className="w-screen h-full py-[2%] project-section relative" id="projects">
+      <div className="container-lg w-screen flex justify-between items-center mb-[6vw]">
         <SectionTitle line1={"See Our"} line2={"Work"} firstColor={"text-secondary-color"}/>
         <div>
 
         <Button link={"#"} btnText={"View More"}/>
         </div>
       </div>
-      <div className="w-full flex justify-between gap-[3vw] translate-x-[55%] project-handles">
-        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
+      <div className="w-full flex justify-between gap-[3.8vw] translate-x-[85%] project-handles relative z-[200]">
+        <Link href={"#"} className="w-[8vw] h-[90vh] flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60 ">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60 ">2023</p>
         </Link>
-        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        <Link href={"#"} className="w-[8vw] h-[90vh] flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
         </Link>
-        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        <Link href={"#"} className="w-[8vw] h-[90vh] flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
         </Link>
-        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        <Link href={"#"} className="w-[8vw] h-[90vh] flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
         </Link>
-        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        <Link href={"#"} className="w-[8vw] h-[90vh] flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
         </Link>
-        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        <Link href={"#"} className="w-[8vw] h-[90vh] flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding
           </p>
           <p className="text-[1.1vw] opacity-60">2023</p>
         </Link>
-        <Link href={"#"} className="w-[8vw] h-full flex flex-col gap-[1vw]">
+        <Link href={"#"} className="w-[8vw] h-[90vh] flex flex-col gap-[1vw]">
           <h3 className="grotesk text-[1.2vw] font-medium">Patronum</h3>
           <p className="text-[1.1vw] opacity-60">
             Web Design Marketing Branding

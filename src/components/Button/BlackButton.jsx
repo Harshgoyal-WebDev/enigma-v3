@@ -59,7 +59,7 @@ const BlackButton = ({ link, btnText, classname , invert }) => {
             <div className="relative z-[2]">{btnText}</div>
           </div>
         </Link>
-        <div className={`w-fit h-fit p-[1.1vw] border border-[#f9f9f9] rounded-full relative bg-[#1d1d1d] group-hover:bg-[#f9f9f9] transition-all duration-300 ease-out HOVER group-hover:rotate-45 `} ref={elementRef}>
+        <div className={`w-fit h-fit p-[1.1vw] border border-[#f9f9f9] rounded-full relative bg-transparent group-hover:bg-[#f9f9f9] transition-all duration-300 ease-out HOVER group-hover:rotate-45 `} ref={elementRef}>
           <span ref={spanRef} className="bg-[#f9f9f9]"></span>
           <Image src="/button-arrow.svg" alt="button-svg" className={`object-contain invert transition-all duration-300 group-hover:invert-0 ${invert}`} width={20} height={20}/>
         </div>

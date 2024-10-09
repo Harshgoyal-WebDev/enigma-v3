@@ -21,7 +21,7 @@
  
   .HOVER {
     --width: 100%;
-    --time: 0.7s;
+    --time: 0.4s;
   
     position: relative;
     display: inline-block;

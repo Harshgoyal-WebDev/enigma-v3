@@ -19,14 +19,14 @@ const Hero = () => {
       scrollTrigger: {
         trigger: "#hero",
         start: "top top",
-        end: "bottom top",
+        end: "+=2000 top",
         scrub: true,
         pin: true,
       },
     });
     tl.to(".title-block", {
       opacity: 0,
-      duration: 2,
+      duration: 1,
       ease: "none",
     });
     tl.fromTo(
@@ -36,10 +36,10 @@ const Hero = () => {
         yPercent: 10,
       },
       {
-        delay: 4,
+        
         scale: 1,
         yPercent: 0,
-        duration: 6,
+        duration: 3,
         ease: "none",
       }
     );

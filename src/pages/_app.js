@@ -41,7 +41,9 @@ export default function App({ Component, pageProps }) {
           },
         ]}
       />
-      <ReactLenis root lerp={0.3}>
+      <ReactLenis root options={{
+        
+      }}>
         <Component {...pageProps} />
         <div className="grid-container absolute z-[-1] top-0 left-0 flex justify-between">
           <div className="grid-lines"></div>

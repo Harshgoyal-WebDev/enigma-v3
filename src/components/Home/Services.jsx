@@ -44,6 +44,7 @@ const WorkCard = ({ heading }) => {
   };
 
   return (
+    
     <div 
       className="w-[90vw] h-[45vw] flex flex-col gap-[4vw] items-center rounded-[50px] bg-secondary-color px-[4vw] shadow-xl border border-black/10 mobile:rounded-[6vw] fadeup tablet:rounded-[3vw] mobile:py-[10vw] idcards"
     >
@@ -184,8 +185,8 @@ const Services = () => {
 
   return (
     <section
-      className=" w-screen h-screen bg-transparent works-container mobile:h-full tablet:h-full mt-[10%] overflow-hidden"
-      id="work"
+      className=" w-screen h-screen bg-transparent works-container mobile:h-full tablet:h-full mt-[20%] overflow-hidden"
+      id="services"
     >
       <div className="flex flex-col justify-center items-center relative">
         <div className="feature-container w-full h-[100vh] flex justify-center items-center py-[2vw] mobile:pb-[4vh] feature-card tablet:pb-[3vw] tablet:pt-0">

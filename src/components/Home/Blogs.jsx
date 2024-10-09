@@ -43,7 +43,7 @@ const Blogs = () => {
         trigger: "#blogs",
         pin: true,
         scrub: true,
-        start: "top -30%",
+        start: "30% top",
         end: "+=1000 top",
       },
     });
@@ -78,7 +78,7 @@ const Blogs = () => {
         id="blogs"
         className="py-[10%] w-screen h-full overflow-hidden"
       >
-        <div className="container-lg h-screen flex flex-col justify-between relative items-center">
+        <div className="container-lg h-[120vh] flex flex-col justify-between relative items-center">
           <div className="w-full h-fit flex justify-between">
             <div>
               <SectionTitle line1={"See Our"} line2={"Creative Musing"} firstColor={"text-white"}/>

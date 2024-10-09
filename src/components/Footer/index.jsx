@@ -62,8 +62,8 @@ const Footer = () => {
               <Button
                 btnText={"Say Hello"}
                 link={"#"}
-                classname={"border-white bg-white text-black"}
-                invert={"bg-white"}
+                classname={""}
+                invert={""}
               />
             </div>
           </div>

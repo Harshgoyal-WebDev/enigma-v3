@@ -195,7 +195,7 @@ export function paraAnimWordpress() {
            trigger:title,
            start:"top 90%",
            scrub:true,
-           markers:true
+          //  markers:true
   
          }
        })

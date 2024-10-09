@@ -78,9 +78,10 @@ export default function Model() {
       scrollTrigger: {
         trigger: "#hero-model",
         start: "top top",
-        end: "bottom top",
+        end: "+=2500 top",
         scrub: true,
         pin: true,
+        // markers:true
       },
     });
 
@@ -90,10 +91,10 @@ export default function Model() {
     // })
      tl .to(modelMeshRef.current.position, {
         delay: -1,
-        x: -0.5,
+        x: -0.4,
         y: 0,
         z: 1,
-        duration: 4,
+        duration: 1,
         ease: "none",
       })
       .to(modelMeshRef.current.position, {
