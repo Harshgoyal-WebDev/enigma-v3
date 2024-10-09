@@ -20,7 +20,7 @@ const Testimonials = () => {
     const changeBodyColor = (color) => {
       gsap.to(body, {
         backgroundColor: color,
-        duration: 0.05, // Duration for smooth transition
+        duration: 0.02, // Duration for smooth transition
         ease: "power2.out",
       });
     };

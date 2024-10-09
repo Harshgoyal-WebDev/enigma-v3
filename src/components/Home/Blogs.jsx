@@ -43,7 +43,7 @@ const Blogs = () => {
         trigger: "#blogs",
         pin: true,
         scrub: true,
-        start: "30% top",
+        start: "27% top",
         end: "+=1000 top",
       },
     });
@@ -94,9 +94,9 @@ const Blogs = () => {
               />
             </div>
           </div>
-          <div className="w-full h-screen blogs">
+          <div className="w-full h-screen blogs relative ">
             <Link href={"#"}>
-            <div className="w-[37%] h-[38vw] rounded-[1.5vw] absolute top-[30%]  left-[32%] blog-card1 z-[4] overflow-hidden">
+            <div className="w-[37%] h-[38vw] rounded-[1.5vw] absolute top-[40%] translate-y-[-30%]  left-[32%] blog-card1 z-[4] overflow-hidden">
               <Image
                 src="/assets/home/blog-image-1.webp"
                 alt="blog-image-1"
@@ -123,7 +123,7 @@ const Blogs = () => {
             </div>
             </Link>
             <Link href={"#"}>
-            <div className="w-[37%] h-[38vw] rounded-[1.5vw]  absolute top-[30%]  left-[50%] translate-x-[-50%] scale-[0.9] blog-card2 overflow-hidden z-[3]">
+            <div className="w-[37%] h-[38vw] rounded-[1.5vw]  absolute top-[40%] translate-y-[-30%]  left-[50%] translate-x-[-50%] scale-[0.9] blog-card2 overflow-hidden z-[3]">
               <Image
                 src="/assets/home/blog-image-2.webp"
                 alt="blog-image-2"
@@ -151,7 +151,7 @@ const Blogs = () => {
 
             </Link>
             <Link href={"#"}>
-            <div className="w-[37%] h-[38vw] rounded-[1.5vw]  absolute top-[30%]  right-[33%] scale-[0.8] blog-card3 overflow-hidden z-[2]">
+            <div className="w-[37%] h-[38vw] rounded-[1.5vw]  absolute top-[40%] translate-y-[-30%]  right-[33%] scale-[0.8] blog-card3 overflow-hidden z-[2]">
               <Image
                 src="/assets/home/blog-image-3.webp"
                 alt="blog-image-3"

@@ -122,7 +122,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="mt-[10vw] pb-[5vw] flex flex-wrap gap-[3vw] items-center justify-center about-cards-container">
+        <div className="mt-[20vw] pb-[5vw] flex flex-wrap gap-[3vw] items-center justify-center about-cards-container">
           <div className=' translate-x-[-70%] opacity-0 about-card1 -rotate-[45deg] about-cards'>
             <AboutCard color={'#ff6b00'} no={12} text={"Awards & Recognition"} src={"/assets/home/awards.png"} />
           </div>

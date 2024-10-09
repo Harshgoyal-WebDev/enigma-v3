@@ -39,9 +39,9 @@ const Projects = () => {
         trigger:"#projects",
         scrub:true,
         pin:true,
-        
+        // markers:true,
         start:"23% top",
-        end:"+=1500 top"
+        end:"+=1900 top"
       }
     })
     gsap.to(".project-handles",{
@@ -64,8 +64,10 @@ const Projects = () => {
   })
 
   return (
-    <section className="w-screen h-full py-[2%] project-section relative" id="projects">
-      <div className="container-lg w-screen flex justify-between items-center mb-[6vw]">
+    <section className="w-full h-full py-[2%] project-section relative" id="projects">
+      <div className="w-screen h-[120vh] flex flex-col justify-between">
+
+      <div className="container-lg w-screen flex justify-between items-center">
         <SectionTitle line1={"See Our"} line2={"Work"} firstColor={"text-secondary-color"}/>
         <div>
 
@@ -145,6 +147,7 @@ const Projects = () => {
           <CardMesh />
         
         </View>
+      </div>
       </div>
     </section>
   );

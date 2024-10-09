@@ -1,119 +1,86 @@
-/*--------------------Buttons CSS Start-------------------*/
-.btn_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 10vw;
-    width: 10vw;
-}
+/* @keyframes shake {
+    25% {
+      transform: rotate(calc(var(--angle) * -1));
+    }
+  
+    50% {
+      transform: rotate(var(--angle));
+    }
+  
+    100% {
+      transform: rotate(0deg);
+    }
+  } */
+  
+  
+  
 
-.btn-white {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 8vw;
-  height: 8vw;
-  font-weight: 500;
-  font-size: 1.2vw;
-  line-height: 1.2;
-  color: white;
-  text-transform: capitalize;
-  border: 1px solid rgb(255, 255, 255);
-  border-radius: 100%;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.5s ease-out;
-}
-
-.btn-item {
-    position: absolute;
+  .faq-acc{
+    margin-bottom: -7px;
   }
-
-.btn-white span {
-  position: absolute;
-  content: "";
-  width: 0px;
-  height: 0px;
-  left: 0;
-  top: 0;
-  color: white;
-  background-color: white;
-  z-index: -1;
-  border-radius: 100%;
-  -webkit-transition: all 0.7s;
-  transition: all 0.7s;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.btn-white:hover{
-    color: black;
-}
-
-.btn-white:hover span {
-  width: 350px;
-  height: 350px;
-}
-
-/* screen size for mobile */
-@media  screen and (max-width:540px) {
-  .btn_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 25vw;
-    width: 25vw;
-}
-.btn-white {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 22vw;
-  height: 22vw;
-  font-family: Satoshi, Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 4vw;
-  line-height: 1.2;
-  color: white;
-  text-transform: capitalize;
-  border: 1px solid white;
-  border-radius: 100%;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.5s ease-out;
-}
+ 
+  .HOVER {
+    --width: 100%;
+    --time: 0.4s;
   
-}
-/* screen size for tablet */
-@media  screen and (min-width:540px) and (max-width:1023px) {
-  .btn_wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    height: 20vw;
-    width: 20vw;
-}
-.btn-white {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 18vw;
-  height: 18vw;
-  font-family: Satoshi, Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 3vw;
-  line-height: 1.2;
-  color: white;
-  text-transform: capitalize;
-  border: 1px solid white;
-  border-radius: 100%;
-  position: relative;
-  overflow: hidden;
-  transition: color 0.5s ease-out;
-}
+    display: inline-block;
+    
+   
   
-}
-/*-----------------Buttons CSS End--------------------------*/
+    color: white;
+    background: #222;
+    overflow: hidden;
+  }
+  
+  .HOVER text {
+    position: relative;
+    z-index: 5;
+    
+    transition: color var(--time);
+  }
+  
+  .HOVER:hover text {
+    color: #222;
+  }
+  
+  .HOVER span {
+    position: absolute;
+    display: block;
+    content: "";
+    z-index: 0;
+    width: 0;
+    height: 0;
+    
+    border-radius: 100%;
+    
+    
+    transform: translate(-50%, -50%);
+    transition: width var(--time), padding-top var(--time);
+  }
+  
+  .HOVER:hover span {
+    width: calc(var(--width) * 2.25);
+    padding-top: calc(var(--width) * 2.25);
+  }
+  
+  .HOVER.FLASH:hover text {
+    color: white;
+  }
+  
+  .HOVER.FLASH span {
+    background: #ff3b3b;
+  }
+  
+  .animated {
+    --angle: 5deg;
+    animation: shake 0.3s;
+  }
+  
+  .link{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    
+    font-size: 1rem;
+  }

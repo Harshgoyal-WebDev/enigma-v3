@@ -83,8 +83,9 @@ const Hero = () => {
 
           {/* Showreel Container */}
           <div
-            className="top-0 left-0 bottom-0 right-0 absolute flex justify-center items-center"
+            className="top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] bottom-0 right-0 absolute flex justify-center items-center w-4/5 h-fit overflow-hidden"
             id="reel-container"
+            data-magnetic-target data-magnetic-strength="200"
           >
             <video
               id="hero-reel"
@@ -93,11 +94,11 @@ const Hero = () => {
               autoPlay
               muted
               loop
-              className="rounded-[40px] h-auto object-cover overflow-hidden w-3/4 mx-auto scale-0"
+              className="rounded-[40px] h-auto object-cover overflow-hidden w-full mx-auto scale-0"
             />
-          </div>
           <div className=" absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] reel-btn">
             <ReelButton text={"Play Reel"} className="magnetic-inner" />
+          </div>
           </div>
         </div>
       </section>

@@ -1,8 +1,8 @@
 import React from 'react'
-// import { titleAnim } from "../gsapAnimations";
+import { titleAnim } from "../gsapAnimations";
 
 const SectionTitle = ({line1, line2, firstColor}) => {
-    // titleAnim()
+    titleAnim()
   return (
     <>
     <h2 className="title-2 title-animation">

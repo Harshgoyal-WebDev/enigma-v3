@@ -161,36 +161,53 @@ const Services = () => {
       const tl2 = gsap.timeline({
         scrollTrigger: {
           trigger: ".works-container",
-          start: "+=3000 top",
-          end: "+=5000 top",
+          start: "100% 90%",
+          end: "+=200 30%",
           scrub: true,
           // markers: true, 
         },
       });
 
       tl2.to(".feature-container3", {
-        yPercent: -190,
+        yPercent: -195,
         ease: "none",
+       
+        
+      })
+      .to(".feature-container3 .idcards",{
+        backgroundColor:"#333333",
+        delay:-0.5
       })
         .to(".feature-container2", {
           yPercent: -90,
           ease: "none",
+          delay:-0.5,
+           
+        })
+        .to(".feature-container2 .idcards",{
+          backgroundColor:"#555555",
+          delay:-0.5
         })
         .to(".feature-container", {
-          yPercent: 20,
+          yPercent: 14,
           ease: "none",
-        });
+          delay:-0.5,
+        })
+        .to(".feature-container .idcards",{
+          backgroundColor:"#777777",
+          delay:-0.5
+        })
     });
   }
 
   return (
     <section
-      className=" w-screen h-screen bg-transparent works-container mobile:h-full tablet:h-full mt-[20%] overflow-hidden"
+      className=" w-screen h-screen bg-transparent works-container mobile:h-full tablet:h-full mt-[15%]"
       id="services"
     >
       <div className="flex flex-col justify-center items-center relative">
         <div className="feature-container w-full h-[100vh] flex justify-center items-center py-[2vw] mobile:pb-[4vh] feature-card tablet:pb-[3vw] tablet:pt-0">
-          <WorkCard heading={"Strategy"} />
+          <WorkCard heading={"Strategy"}  />
         </div>
         <div className="feature-container2 w-full h-[100vh] flex justify-center items-center py-[7vw] mobile:pb-[4vh] feature-card tablet:py-[3vw]">
           <WorkCard heading={"Strategy"} />
