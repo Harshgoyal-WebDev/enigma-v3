@@ -27,7 +27,7 @@ const ReelButton = ({className = "", onClick, text }) => {
 
   return (
     <div className="btn_wrapper">
-      <button aria-label="Play Showreel" className={`btn-white btn-hover btn-item ${className}`}>
+      <button aria-label="Play Showreel" onClick={onClick} className={`btn-white btn-hover btn-item ${className}`}>
         <span></span>
             {text}
       </button>

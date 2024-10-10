@@ -38,7 +38,7 @@
   left: 0;
   top: 0;
   color: white;
-  background-color: white;
+  background-color: #ff6b00;
   z-index: -1;
   border-radius: 100%;
   -webkit-transition: all 0.7s;
@@ -48,7 +48,8 @@
 }
 
 .btn-white:hover{
-    color: black;
+    color: white;
+    border: #ff6b00;
 }
 
 .btn-white:hover span {

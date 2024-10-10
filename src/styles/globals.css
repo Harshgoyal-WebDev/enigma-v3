@@ -103,6 +103,31 @@ body {
   
 }
 
+/* lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+html.lenis.lenis-stopped {
+  height: 100vh;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+
 .grid-container{
   width: 100vw;
   height: 100%;
@@ -110,8 +135,8 @@ body {
 }
 .grid-lines{
   height: 100%;
-  width: 1px; 
-  border: 1px solid;
+  
+  border-left: 1px solid;
  background:"#ededed" ;
  opacity: 0.05;
 }
@@ -169,7 +194,6 @@ color: transparent;
   background-size: 200% 100%;
   background-position-x: 100%;
   color: transparent;
-  
   background-clip: text;
   -webkit-background-clip: text;
   position: relative;

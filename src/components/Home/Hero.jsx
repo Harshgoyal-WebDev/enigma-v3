@@ -1,16 +1,54 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { View } from "@react-three/drei";
-import React, { useRef, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Model from "../Meshes/Model";
 import { useGSAP } from "@gsap/react";
 import ReelButton from "../Button/ReelButton";
 import { initMagneticButton } from "../splitTextUtils";
-
+import dynamic from "next/dynamic";
+import { useLenis } from "@studio-freight/react-lenis";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
+const VideoModal = dynamic(() => import("@/components/VideoPlayer"), {
+  ssr: false,
+});
+
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const lenis = useLenis();
+
+  const handleOpen = () => {
+    setIsModalOpen(true);
+    // lenis.stop();
+  };
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+    // lenis.start();
+  };
+  useEffect(() => {
+    if (!lenis) {
+      console.error("Lenis is not initialized.");
+    } else {
+      console.log(lenis);
+    }
+  }, [lenis]);
+
+  // Watch for modal state and control Lenis
+  useEffect(() => {
+    if (lenis) {
+      console.log("Stopping Lenis");
+      if (isModalOpen) {
+        lenis.stop();
+      } else {
+        console.log("starting Lenis");
+        lenis.start();
+      }
+    }
+  }, [isModalOpen, lenis]);
   useEffect(() => {
     initMagneticButton();
   }, []);
@@ -36,7 +74,6 @@ const Hero = () => {
         yPercent: 10,
       },
       {
-        
         scale: 1,
         yPercent: 0,
         duration: 3,
@@ -56,13 +93,13 @@ const Hero = () => {
         <div className="relative h-screen w-screen overflow-hidden">
           {/* 3d Model Container */}
           <div className="absolute top-0 left-0 w-full" id="hero-model">
-            <View className="h-screen w-screen">
+            <View className="h-screen w-screen relative">
               <Model />
             </View>
           </div>
 
           {/* Hero Text Container  */}
-          <div className="container-lg h-screen flex flex-col items-start justify-center gap-[2vw] title-block">
+          <div className="container-lg h-screen flex flex-col items-start justify-center gap-[2vw] title-block relative z-[-1]">
             <h1 className="title-1 grotesk leading-[1.01] block w-[60%] tracking-tight ">
               <span className="hero-title-anim">Digital</span>
               <span className="text-primary-color hero-title-anim">
@@ -85,7 +122,8 @@ const Hero = () => {
           <div
             className="top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] bottom-0 right-0 absolute flex justify-center items-center w-4/5 h-fit overflow-hidden"
             id="reel-container"
-            data-magnetic-target data-magnetic-strength="200"
+            data-magnetic-target
+            data-magnetic-strength="200"
           >
             <video
               id="hero-reel"
@@ -96,11 +134,22 @@ const Hero = () => {
               loop
               className="rounded-[40px] h-auto object-cover overflow-hidden w-full mx-auto scale-0"
             />
-          <div className=" absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] reel-btn">
-            <ReelButton text={"Play Reel"} className="magnetic-inner" />
-          </div>
+            <div className=" absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] reel-btn">
+              <ReelButton
+                text={"Play Reel"}
+                className="magnetic-inner"
+                onClick={handleOpen}
+              />
+            </div>
           </div>
         </div>
+        {isModalOpen && (
+          <VideoModal
+            isOpen={isModalOpen}
+            onClose={handleClose}
+            videoSrc="/assets/home/hero.mp4"
+          />
+        )}
       </section>
     </>
   );

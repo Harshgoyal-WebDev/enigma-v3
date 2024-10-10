@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
 import { useEffect } from "react";
-import $ from 'jquery';
+
 
 const ANIMATEDCLASSNAME = "animated";
 

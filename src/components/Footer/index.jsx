@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center justify-between px-[3vw] z-10">
-            <div className="flex flex-col gap-[1vw] w-[15%]">
+            <div className="flex flex-col gap-[1vw] w-[20%]">
               <p className="text-[1.25vw] font-medium">Contact Us</p>
               <p className="text-[1.25vw] font-normal tracking-wider">hi@weareenigma.com</p>
               <p className="text-[1.25vw] font-normal tracking-wider">+91 8745044555</p>
