@@ -75,8 +75,6 @@ const PrimaryButton = ({ link, btnText, classname , invert }) => {
         <Link href={link}>
           <div className={`w-fit min-w-[7vw] bg-[#f9f9f9] relative HOVER text-secondary-color hover:text-[#f9f9f9] transistion-all ease-in duration-300 border border-secondary-color hover:border-[#f9f9f9] px-[3vw] py-[0.7vw] text-[1.3vw] rounded-full btn-hover overflow-hidden ${classname}`}>
         <span className="bg-[#1d1d1d]" ref={spanRef}></span>
-        
-            
             <div className="relative z-[2]">{btnText}</div>
           </div>
         </Link>

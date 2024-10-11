@@ -56,11 +56,11 @@ const Blob = ({ material, map, geometry }) => {
   
       
         if (deltaY < 0 || deltaX < 0) {
-          if (deltaY < -5 || deltaX < -5) {
+          if (deltaY < -30 || deltaX < -30) {
             newPosition[0] += 0.7;
           }
         } else if (deltaY > 0 || deltaX > 0) {
-          if (deltaY > 5 || deltaX > 5) {
+          if (deltaY > 30 || deltaX > 30) {
             newPosition[0] -= 0.7;
           }
         }
@@ -74,12 +74,12 @@ const Blob = ({ material, map, geometry }) => {
         let newRotation = [...prevRotation];
   
         if (deltaY < 0 || deltaX < 0) {
-          if (deltaY < -10 || deltaX < -10) {
-            newRotation[1] += Math.PI / 10;
+          if (deltaY < -30 || deltaX < -30) {
+            newRotation[1] += Math.PI/5;
           }
         } else if (deltaY > 0 || deltaX > 0) {
-          if (deltaY > 7 || deltaX > 7) {
-            newRotation[1] -= Math.PI / 10;
+          if (deltaY > 30 || deltaX > 30) {
+            newRotation[1] -= Math.PI/5;
           }
         }
         setRotationSpring({ rotation: newRotation });

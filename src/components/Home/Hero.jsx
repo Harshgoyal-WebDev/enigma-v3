@@ -111,7 +111,7 @@ const Hero = () => {
                 Design Agency
               </span>
             </h1>
-            <p className="w-[50%] text-[1.2vw] ">
+            <p className="w-[38%] text-[1.2vw] ">
               Harnessing the power of Emotion, Design, Technology &
               Neuromarketing, we create Digital Brand Experiences that propel
               your success in the enigmatic realm of bits & bytes.

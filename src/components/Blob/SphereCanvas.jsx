@@ -18,7 +18,7 @@ const SphereCanvas = ({ current, setCurrent }) => {
   );
 
   return (
-    <View style={{ background:bg }} className="w-screen h-screen z-[-5] overflow-hidden negative">
+    <View style={{ background:bg }} className="w-screen h-screen z-[-5] overflow-hidden">
       <animated.mesh camera={{ position: [0, 0, 4], fov: 50 }}>
         <ambientLight intensity={ambient} />
         <Lights lights={lights} />

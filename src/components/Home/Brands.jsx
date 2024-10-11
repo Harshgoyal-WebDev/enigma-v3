@@ -43,12 +43,33 @@ const Brands = () => {
       const gridItemsInner = [...gridItems].map((item) =>
         item.querySelector(".grid__item-inner")
       );
-
+    
       const randomGridItems = getRandomItems(gridItemsInner, 2);
       randomGridItems.forEach((item) => {
         item.style.opacity = 1;
       });
-
+    
+      // Pre-calculate the random values for each item ONCE
+      const randomValues = [...gridItems].map(() => ({
+        xPercent: gsap.utils.random(-150, 150),
+        yPercent: gsap.utils.random(-300, 300),
+        z: gsap.utils.random(-5000, -2000),
+        rotationX: gsap.utils.random(-65, -25),
+      }));
+    
+      // Immediately apply the random positions (without animation)
+      gridItems.forEach((item, i) => {
+        gsap.set(item, {
+          xPercent: randomValues[i].xPercent,
+          yPercent: randomValues[i].yPercent,
+          z: randomValues[i].z,
+          rotationX: randomValues[i].rotationX,
+          transformOrigin: "0% 0%",
+          filter: "brightness(0%)", // Initial brightness
+        });
+      });
+    
+      // Create the GSAP timeline with ScrollTrigger
       const timeline = gsap.timeline({
         defaults: { ease: "none" },
         scrollTrigger: {
@@ -58,37 +79,31 @@ const Brands = () => {
           scrub: true,
         },
       });
-
+    
       if (animationType === "type3") {
         grid.style.setProperty("--grid-width", "105%");
         grid.style.setProperty("--grid-columns", "8");
         grid.style.setProperty("--perspective", "1500px");
         grid.style.setProperty("--grid-inner-scale", "2");
-
+    
         timeline
-          .set(gridItems, {
-            transformOrigin: "0% 0%",
-            z: () => gsap.utils.random(-5000, -2000),
-            rotationX: () => gsap.utils.random(-65, -25),
-            filter: "brightness(0%)",
-          })
+          // Animate only other properties (not position) like brightness or z-index
           .to(
             gridItems,
             {
-              xPercent: () => gsap.utils.random(-150, 150),
-              yPercent: () => gsap.utils.random(-300, 300),
               rotationX: 0,
-              filter: "brightness(200%)",
+              filter: "brightness(200%)", // Adjust brightness during scroll
             },
             0
           )
           .to(
             gridWrap,
             {
-              z: 6500,
+              z: 6500, // Moving the whole grid wrap in the z-axis
             },
             0
           )
+          // Scale down the inner items and adjust opacity for random items
           .fromTo(
             gridItemsInner,
             {
@@ -104,6 +119,8 @@ const Brands = () => {
           );
       }
     };
+    
+    
 
     const scroll = () => {
       const grids = document.querySelectorAll(".grid");

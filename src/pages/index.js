@@ -16,6 +16,7 @@ import Faq from '@/components/Home/Faq';
 import Footer from '@/components/Footer';
 import Testfill from '@/components/Testfill';
 import Header from '@/components/Header';
+import Loader from '@/components/Loader';
 
 gsap.registerPlugin(useGSAP,ScrollTrigger)
 
@@ -23,6 +24,7 @@ export default function Home() {
   
   return (
     <>
+    {/* <Loader/> */}
     <Header/>
      <main>
       <Hero/>

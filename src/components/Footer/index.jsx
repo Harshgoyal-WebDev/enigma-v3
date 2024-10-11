@@ -19,11 +19,11 @@ const Footer = () => {
     const deltaX = e.deltaX;
 
     if (deltaY < 0 || deltaX < 0) {
-      if (deltaY < -80 || deltaX < -80) {
+      if (deltaY < -30 || deltaX < -30) {
         setCurrent((prev) => (prev + 1) % 4);
       }
     } else if (deltaY > 0 || deltaX > 0) {
-      if (deltaY > 80 || deltaX > 80) {
+      if (deltaY > 30 || deltaX > 30) {
         setCurrent((prev) => (prev - 1 + 4) % 4);
       }
     }
