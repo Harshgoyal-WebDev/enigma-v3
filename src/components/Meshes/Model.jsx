@@ -4,7 +4,6 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Model() {
@@ -27,8 +26,6 @@ export default function Model() {
     };
   }, []);
 
-
-
   useEffect(() => {
     scene.traverse((child) => {
       if (child.isMesh) {
@@ -49,25 +46,32 @@ export default function Model() {
         });
       }
     });
-    scene.rotation.set(0, 0, 0);
+    scene.rotation.set(0,Math.PI, 0);
   }, [scene]);
 
   useEffect(() => {
-    const lookAtMouse = () => {
-      if (modelMeshRef.current) {
-        const vector = new THREE.Vector3(-mouse.x*0.1, -mouse.y*0.1, 0.1); 
-        vector.unproject(cameraRef.current); 
+    const lerpFactor = 0.05; // Smoothing factor for camera movement
+    const moveCamera = () => {
+      if (cameraRef.current) {
+        const targetX = mouse.x * 0.7; // Adjust multiplier for the amount of camera movement
+        const targetY = mouse.y * 0.7;
 
-        const direction = vector.sub(cameraRef.current.position).normalize(); 
-        const targetPosition = modelMeshRef.current.position.clone().add(direction); 
-
-        modelMeshRef.current.lookAt(targetPosition);
+        // Interpolate the camera position smoothly
+        cameraRef.current.position.x = THREE.MathUtils.lerp(
+          cameraRef.current.position.x,
+          targetX,
+          lerpFactor
+        );
+        cameraRef.current.position.y = THREE.MathUtils.lerp(
+          cameraRef.current.position.y,
+          targetY,
+          lerpFactor
+        );
       }
     };
 
- 
     const animate = () => {
-      lookAtMouse();
+      moveCamera();
       requestAnimationFrame(animate);
     };
     animate();
@@ -81,15 +85,10 @@ export default function Model() {
         end: "+=2500 top",
         scrub: true,
         pin: true,
-        // markers:true
       },
     });
 
-    // tl.to(modelMeshRef.current.rotation, {
-    //   y: Math.PI * 2,
-    //   duration: 4,
-    // })
-     tl .to(modelMeshRef.current.position, {
+    tl.to(modelMeshRef.current.position, {
         delay: -1,
         x: -0.4,
         y: 0,
@@ -118,7 +117,6 @@ export default function Model() {
         far={1000} 
         position={[0, 0, 6]} 
       />
-      {/* Model and Scene */}
       <mesh ref={modelMeshRef} scale={1.2} position={[3, 0, 0]}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[5, 5, 5]} intensity={1} />

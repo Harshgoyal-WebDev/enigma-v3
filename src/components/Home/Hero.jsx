@@ -9,8 +9,10 @@ import ReelButton from "../Button/ReelButton";
 import { initMagneticButton } from "../splitTextUtils";
 import dynamic from "next/dynamic";
 import { useLenis } from "@studio-freight/react-lenis";
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+import { Html } from "@react-three/drei";
+import HeadingText from "./HeadingText";
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 const VideoModal = dynamic(() => import("@/components/VideoPlayer"), {
   ssr: false,
 });
@@ -100,17 +102,9 @@ const Hero = () => {
 
           {/* Hero Text Container  */}
           <div className="container-lg h-screen flex flex-col items-start justify-center gap-[2vw] title-block relative z-[-1]">
-            <h1 className="title-1 grotesk leading-[1.01] block w-[60%] tracking-tight ">
-              <span className="hero-title-anim">Digital</span>
-              <span className="text-primary-color hero-title-anim">
-                {" "}
-                Experience
-              </span>
-              <br />
-              <span className="outline-text tracking-normal hero-title-anim">
-                Design Agency
-              </span>
-            </h1>
+            <View className="h-[70%] w-[80%]">
+           <HeadingText />
+           </View>
             <p className="w-[38%] text-[1.2vw] ">
               Harnessing the power of Emotion, Design, Technology &
               Neuromarketing, we create Digital Brand Experiences that propel

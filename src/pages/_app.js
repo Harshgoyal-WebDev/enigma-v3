@@ -102,7 +102,6 @@ export default function App({ Component, pageProps }) {
             bottom: 0,
             left: 0,
             right: 0,
-          
             pointerEvents: "none",
           }}
           eventSource={rootElement}
