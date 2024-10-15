@@ -18,6 +18,7 @@ const VideoModal = dynamic(() => import("@/components/VideoPlayer"), {
   ssr: false,
 });
 
+
 const Hero = ({timeline}) => {
   const primaryEase = CustomEase.create("cus-1", "0.62, 0.05, 0.01, 0.99");
  

@@ -1,13 +1,17 @@
 import "@/styles/globals.css";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import { ReactLenis } from "@studio-freight/react-lenis";
 import { DefaultSeo } from "next-seo";
-import { View, Preload } from "@react-three/drei";
+import { View, Preload, PerspectiveCamera } from "@react-three/drei";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import BackgroundShader from "@/components/Background/backgroundShader";
+import * as THREE from "three";
+import Camera from "@/components/Homepage/Camera";
+
+
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function App({ Component, pageProps }) {
@@ -94,29 +98,9 @@ export default function App({ Component, pageProps }) {
           <div className="grid-lines bg-lines"></div>
           <div className="grid-lines bg-lines"></div>
           <div className="grid-lines bg-lines"></div>
-          </div> */}
-          {/* <BackgroundShader/> */}
-          <Canvas
-          className="view"
-          style={{
-            position: "fixed",
-            top: 0,
-            bottom: 0,
-            left: 0,
-            right: 0,
-            
-            pointerEvents: "none",
-            zIndex:"-1"
-          }}
-          eventSource={rootElement}
-          >
-
-            {/* <BackgroundShader/> */}
-          
-        
-          <Preload all />
-        </Canvas>
+        </div> */}
         <Canvas
+         camera={{position:[0,0,7]}}
           className="view"
           style={{
             position: "fixed",
@@ -130,12 +114,10 @@ export default function App({ Component, pageProps }) {
             zIndex:"-1"
           }}
           eventSource={rootElement}
-          >
-
-            {/* <BackgroundShader/> */}
-          
+        >
           <View.Port />
           <Preload all />
+          {/* <Camera/> */}
         </Canvas>
       </ReactLenis>
     </>

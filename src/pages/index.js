@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import Hero from '@/components/Homepage/Hero';
+import Hero from '@/components/Home/Hero';
 import Header from '@/components/Header';
 import About from '@/components/Home/About';
 import Whatwedo from '@/components/Home/Whatwedo';
@@ -27,8 +27,8 @@ export default function Home() {
     <>
     <Header timeline={timeline}/>
      <main>
-    <Hero/>
-      <About/>
+    <Hero timeline={timeline}/>
+       <About/>
       <Whatwedo/> 
       <Projects/>
       <Services/>

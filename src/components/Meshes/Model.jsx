@@ -1,9 +1,11 @@
-import React, { useRef, useEffect, useState } from "react";
-import { Environment, useGLTF, PerspectiveCamera } from "@react-three/drei";
-import * as THREE from "three";
+import React, { useRef, useEffect, useState} from "react";
+import { Environment, useGLTF, Lightformer } from "@react-three/drei";
 import gsap from "gsap";
 import { useLenis } from "@studio-freight/react-lenis";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Modeljsx } from "./Modeljsx";
+import * as THREE from 'three'
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -118,6 +120,7 @@ export default function Model({ timeline }) {
         pin: true,
       },
     
+    
     });
 
     tl.to(modelMeshRef.current.position, {
@@ -140,23 +143,16 @@ export default function Model({ timeline }) {
 
   return (
     <>
-      <PerspectiveCamera
-        ref={cameraRef}
-        makeDefault
-        fov={75}
-        aspect={window.innerWidth / window.innerHeight}
-        near={0.1}
-        far={1000}
-        position={[0, 0, 6]}
-      />
-      <mesh ref={modelMeshRef} scale={1.2} position={[3, 0, 0.6]}>
+    
+      <mesh ref={modelMeshRef} scale={4} position={[3, 0, 0]} rotation={[0,-0.35,0]} castShadow receiveShadow>
+      <Modeljsx/> 
         <ambientLight intensity={2} />
-        {/* <directionalLight position={[5, 5, 5]} intensity={1} /> */}
-        {/* <Environment files="/assets/home/environment.hdr" /> */}
-        <primitive object={scene} />
+        <Environment preset='city' environmentIntensity={3}>
+      <Lightformer form="rect" intensity={1} position={[2,3,3]} scale={5}/>
+      <Lightformer form="rect" intensity={2} position={[-2,2,-4]} scale={5}/>
+      </Environment>
       </mesh>
     </>
   );
 }
 
-useGLTF.preload("/enigma-icon.glb");

@@ -7,12 +7,12 @@
 @import url('./ReelButton.css');
 
 :root {
-  --background: #1d1d1d;
+  --background: #121212;
   --foreground: #171717;
   --primaryColor:#ff6b00;
   --secondaryColor:#1d1d1d;
-  --HeadingColor:#f9f9f9;
-  --textColor:#f9f9f9;
+  --HeadingColor:#ffffff;
+  --textColor:#ffffff;
   --perspective: 1500px;
 	--grid-item-ratio: 1.5;
 	--grid-width: 100%;

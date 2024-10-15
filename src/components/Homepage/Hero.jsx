@@ -9,9 +9,8 @@ import ReelButton from "../Button/ReelButton";
 import { initMagneticButton } from "../splitTextUtils";
 import dynamic from "next/dynamic";
 import { useLenis } from "@studio-freight/react-lenis";
-import { Html } from "@react-three/drei";
-import HeadingText from "./HeadingText";
-import BackgroundShader from "../Background/backgroundShader";
+import Video from "./Video";
+import ModelVideo from "../Meshes/ModelVideo";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 const VideoModal = dynamic(() => import("@/components/VideoPlayer"), {
@@ -60,7 +59,7 @@ const Hero = () => {
       scrollTrigger: {
         trigger: "#hero",
         start: "top top",
-        end: "+=2000 top",
+        end: "+=3000 top",
         scrub: true,
         pin: true,
       },
@@ -95,22 +94,26 @@ const Hero = () => {
       <section id="hero" className="">
         <div className="relative h-screen w-screen overflow-hidden">
           {/* 3d Model Container */}
-          
-          {/* <View className="h-screen w-screen fixed top-0 left-0 z-[-1]">
-            <BackgroundShader/>
-          </View> */}
-
-          <div className="absolute top-0 left-0 w-full  " id="hero-model">
-            <View className="h-screen w-screen relative">
-              <Model />
+          <div className="absolute top-0 left-0 w-full">
+            <View className="h-screen w-screen relative"  id="hero-model">
+             <ModelVideo/>
             </View>
           </div>
           {/* Hero Text Container  */}
           <div className="container-lg h-screen flex flex-col items-start justify-center gap-[2vw] title-block relative z-[-1]">
-            <View className="h-[70%] w-[80%]">
-           <HeadingText />
-           </View>
-            <p className="w-[38%] text-[1.2vw] ">
+            <div className="h-[50%] w-[80%]">
+            <h1 className="title-1 grotesk leading-[1.01] block w-[80%] tracking-tight" >
+              <span  className="">Digital</span>
+              <span  className="text-primary-color">
+                {" "} Experience
+              </span>
+              <br />
+              <span  className="outline-text tracking-normal">
+                Design Agency
+              </span> 
+            </h1>
+           </div>
+            <p className="w-[55%] text-[1.2vw] text-white">
               Harnessing the power of Emotion, Design, Technology &
               Neuromarketing, we create Digital Brand Experiences that propel
               your success in the enigmatic realm of bits & bytes.
@@ -118,7 +121,7 @@ const Hero = () => {
           </div>
 
           {/* Showreel Container */}
-          <div
+          {/* <div
             className="top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] bottom-0 right-0 absolute flex justify-center items-center w-4/5 h-fit overflow-hidden"
             id="reel-container"
             data-magnetic-target
@@ -140,7 +143,10 @@ const Hero = () => {
                 onClick={handleOpen}
               />
             </div>
-          </div>
+          </div> */}
+          {/* <View className="h-screen w-screen">
+            <Video/>
+          </View> */}
         </div>
         {isModalOpen && (
           <VideoModal
@@ -154,4 +160,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Hero;

@@ -12,49 +12,49 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger); 
 
 const Footer = () => {
-  const [current, setCurrent] = useState(0);
+  // const [current, setCurrent] = useState(0);
  
-  const handleWheel=(e)=>{
-    const deltaY = e.deltaY;
-    const deltaX = e.deltaX;
+  // const handleWheel=(e)=>{
+  //   const deltaY = e.deltaY;
+  //   const deltaX = e.deltaX;
 
-    if (deltaY < 0 || deltaX < 0) {
-      if (deltaY < -30 || deltaX < -30) {
-        setCurrent((prev) => (prev + 1) % 4);
-      }
-    } else if (deltaY > 0 || deltaX > 0) {
-      if (deltaY > 30 || deltaX > 30) {
-        setCurrent((prev) => (prev - 1 + 4) % 4);
-      }
-    }
-  }
-  useEffect(()=>{
-    window.addEventListener("wheel", handleWheel);
+  //   if (deltaY < 0 || deltaX < 0) {
+  //     if (deltaY < -30 || deltaX < -30) {
+  //       setCurrent((prev) => (prev + 1) % 4);
+  //     }
+  //   } else if (deltaY > 0 || deltaX > 0) {
+  //     if (deltaY > 30 || deltaX > 30) {
+  //       setCurrent((prev) => (prev - 1 + 4) % 4);
+  //     }
+  //   }
+  // }
+  // useEffect(()=>{
+  //   window.addEventListener("wheel", handleWheel);
 
-  },[])
+  // },[])
 
-  useEffect(() => {
-    ScrollTrigger.create({
-      trigger: "#footer", 
-      pin: true,
-      start: "top top",
-      end: "+=2000",
-      scrub: true, 
-      markers: false 
-    });
+  // useEffect(() => {
+  //   ScrollTrigger.create({
+  //     trigger: "#footer", 
+  //     pin: true,
+  //     start: "top top",
+  //     end: "+=2000",
+  //     scrub: true, 
+  //     markers: false 
+  //   });
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+  //   return () => {
+  //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  //   };
+  // }, []);
 
   return (
     <>
       <section id="footer">
-        <div className="h-screen w-screen relative text-white flex flex-col items-center justify-between py-[3vw] rounded-t-[2.3vw]">
-          <div className="absolute  z-[-1]">
+        <div className="h-screen w-screen relative text-white flex flex-col items-center justify-between py-[3vw] rounded-t-[2.3vw] bg-[#c4b5a8]">
+          {/* <div className="absolute  z-[-1]">
             <SphereCanvas current={current} setCurrent={setCurrent} />
-          </div>
+          </div> */}
           <div className="relative text-center z-10 flex items-center justify-center flex-col h-full w-full gap-[2vw]">
             <h2 className="text-[3.9vw]">Let&apos;s Make Something</h2>
             <h2 className="text-[5.2vw]">CREATIVE</h2>
