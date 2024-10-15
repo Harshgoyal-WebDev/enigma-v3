@@ -2,19 +2,21 @@ import React, { useRef, useEffect, useState } from "react";
 import { Environment, useGLTF, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
 import gsap from "gsap";
+import { useLenis } from "@studio-freight/react-lenis";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Model() {
+export default function Model({ timeline }) {
   const modelMeshRef = useRef(null);
   const cameraRef = useRef(null);
   const { scene } = useGLTF("/enigma-icon.glb");
-  
+  const lenis = useLenis()
+
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (event) => {
-    const x = (event.clientX / window.innerWidth) * 2 - 1; 
+    const x = (event.clientX / window.innerWidth) * 2 - 1;
     const y = -(event.clientY / window.innerHeight) * 2 + 1;
     setMouse({ x, y });
   };
@@ -31,23 +33,52 @@ export default function Model() {
       if (child.isMesh) {
         if (child.material) child.material.dispose();
         child.material = new THREE.MeshPhysicalMaterial({
-          transmission: 1,
-          thickness: 1,
-          roughness: 0,
+          transmission: 1.5,
+          thickness: 126,
+          roughness: 0.17,
+          
           metalness: 0,
           color: new THREE.Color(0xffffff),
-          attenuationDistance: 1,
-          attenuationColor: new THREE.Color(0xff6b00),
-          ior: 1.5,
-          clearcoat: 1,
-          clearcoatRoughness: 0,
-          reflectivity: 1,
+          attenuationDistance: 1.43,
+          attenuationColor: new THREE.Color(0xffffff),
+          ior: 2.94,
+          clearcoat: 0.54,
+          clearcoatRoughness: 0.47,
+          reflectivity: 0,
           side: THREE.DoubleSide,
+          samples:16,
+          resolution:256,
+          backsideThickness:180,
+          chromaticAberration:2,
+          anisotropy:1,
+          distortion:0.34,
+          distortionScale:0.2,
+          temporalDistortion:0.23,
         });
       }
     });
     scene.rotation.set(0,Math.PI, 0);
   }, [scene]);
+  // useEffect(() => {
+  //   timeline.from(modelMeshRef.current.position, {
+  //     z: -50,
+  //     x: -0.4,
+  //     y: 0,
+  //     duration: 2.5,
+  //     delay: 0,
+  //     ease: "power4.out", 
+  //   })
+  //   .to(modelMeshRef.current.position,{
+  //    x:3,
+  //    z:1,
+  //    y:0,
+  //    delay:-0.5,
+  //    duration:1
+  //   })
+
+  // }, []);
+  modelMeshRef.position = [3,0,1];
+
 
   useEffect(() => {
     const lerpFactor = 0.05; // Smoothing factor for camera movement
@@ -86,6 +117,7 @@ export default function Model() {
         scrub: true,
         pin: true,
       },
+    
     });
 
     tl.to(modelMeshRef.current.position, {
@@ -110,17 +142,17 @@ export default function Model() {
     <>
       <PerspectiveCamera
         ref={cameraRef}
-        makeDefault 
+        makeDefault
         fov={75}
-        aspect={window.innerWidth / window.innerHeight} 
+        aspect={window.innerWidth / window.innerHeight}
         near={0.1}
-        far={1000} 
-        position={[0, 0, 6]} 
+        far={1000}
+        position={[0, 0, 6]}
       />
-      <mesh ref={modelMeshRef} scale={1.2} position={[3, 0, 0]}>
-        <ambientLight intensity={0.5} />
-        <directionalLight position={[5, 5, 5]} intensity={1} />
-        <Environment files="/assets/home/environment.hdr" />
+      <mesh ref={modelMeshRef} scale={1.2} position={[3, 0, 0.6]}>
+        <ambientLight intensity={2} />
+        {/* <directionalLight position={[5, 5, 5]} intensity={1} /> */}
+        {/* <Environment files="/assets/home/environment.hdr" /> */}
         <primitive object={scene} />
       </mesh>
     </>

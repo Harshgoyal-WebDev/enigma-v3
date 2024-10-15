@@ -18,7 +18,7 @@ const SingleAccordion = ({ id, title, content1, content2 }) => {
       <div className="w-full bg-black lineDraw h-[1px]  mobile:block tablet:block"></div>
       <div className="absolute bg-secondary-color w-full h-full scale-y-0 group-hover:scale-y-[1] origin-top transition-all duration-500 ease-out"></div>
       <AccordionTrigger
-        data-para-anim
+        
         className="text-[1.2vw] mobile:text-[6vw] pl-[5vw] mobile:text-left mobile:flex mobile:w-full tablet:text-[4vw] relative z-[2] tablet:text-left group-hover:text-white ease-in font-normal py-[2%] mobile:py-[5%] accordion [&[data-state=open]>.line>.line-internal>.icon-container>.icon]:rotate-[90deg] [&[data-state=open]>.line>.line-internal>.icon-container>.icon>.minus]:rotate-90 [&[data-state=open]>.line>.line-internal>.icon-container>.icon]:bg-body [&[data-state=open]>.line>.line-internal>.icon-container>.icon]:text-white"
       >
         {title}

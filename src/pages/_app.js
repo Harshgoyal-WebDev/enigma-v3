@@ -7,6 +7,7 @@ import { View, Preload } from "@react-three/drei";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import BackgroundShader from "@/components/Background/backgroundShader";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function App({ Component, pageProps }) {
@@ -84,7 +85,7 @@ export default function App({ Component, pageProps }) {
       />
       <ReactLenis root options={{}}>
         <Component {...pageProps} />
-        <div className="grid-container absolute z-[-1] top-0 left-0 flex justify-between w-screen h-screen">
+        {/* <div className="grid-container absolute z-[-1] top-0 left-0 flex justify-between w-screen h-screen">
           <div className="grid-lines bg-lines"></div>
           <div className="grid-lines bg-lines"></div>
           <div className="grid-lines bg-lines"></div>
@@ -93,7 +94,28 @@ export default function App({ Component, pageProps }) {
           <div className="grid-lines bg-lines"></div>
           <div className="grid-lines bg-lines"></div>
           <div className="grid-lines bg-lines"></div>
-        </div>
+          </div> */}
+          {/* <BackgroundShader/> */}
+          <Canvas
+          className="view"
+          style={{
+            position: "fixed",
+            top: 0,
+            bottom: 0,
+            left: 0,
+            right: 0,
+            
+            pointerEvents: "none",
+            zIndex:"-1"
+          }}
+          eventSource={rootElement}
+          >
+
+            {/* <BackgroundShader/> */}
+          
+        
+          <Preload all />
+        </Canvas>
         <Canvas
           className="view"
           style={{
@@ -102,10 +124,16 @@ export default function App({ Component, pageProps }) {
             bottom: 0,
             left: 0,
             right: 0,
+            height:"100vh",
+            width: "100vw",
             pointerEvents: "none",
+            zIndex:"-1"
           }}
           eventSource={rootElement}
-        >
+          >
+
+            {/* <BackgroundShader/> */}
+          
           <View.Port />
           <Preload all />
         </Canvas>

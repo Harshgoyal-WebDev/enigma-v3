@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -17,10 +17,15 @@ import Footer from '@/components/Footer';
 gsap.registerPlugin(useGSAP,ScrollTrigger)
 
 export default function Home() {
+  const timeline = gsap.timeline({ paused: true }); // Pause the timeline initially
+
+  useEffect(() => {
+    ScrollTrigger.refresh(); // Refresh ScrollTrigger after timeline is set
+  }, []);
   
   return (
     <>
-    <Header/>
+    <Header timeline={timeline}/>
      <main>
     <Hero/>
       <About/>

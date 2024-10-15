@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import { useLenis } from "@studio-freight/react-lenis";
 import { Html } from "@react-three/drei";
 import HeadingText from "./HeadingText";
+import BackgroundShader from "../Background/backgroundShader";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 const VideoModal = dynamic(() => import("@/components/VideoPlayer"), {
@@ -94,12 +95,16 @@ const Hero = () => {
       <section id="hero" className="">
         <div className="relative h-screen w-screen overflow-hidden">
           {/* 3d Model Container */}
-          <div className="absolute top-0 left-0 w-full" id="hero-model">
+          
+          {/* <View className="h-screen w-screen fixed top-0 left-0 z-[-1]">
+            <BackgroundShader/>
+          </View> */}
+
+          <div className="absolute top-0 left-0 w-full  " id="hero-model">
             <View className="h-screen w-screen relative">
               <Model />
             </View>
           </div>
-
           {/* Hero Text Container  */}
           <div className="container-lg h-screen flex flex-col items-start justify-center gap-[2vw] title-block relative z-[-1]">
             <View className="h-[70%] w-[80%]">

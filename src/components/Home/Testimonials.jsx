@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
@@ -7,9 +7,47 @@ import SectionTitle from "../SectionTitle";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 // import { titleAnim } from "../gsapAnimations";
-
+const ANIMATEDCLASSNAME = "animated";
 const Testimonials = () => {
- 
+  const elementRef = useRef(null);
+      const spanRef = useRef(null);
+    
+      useEffect(() => {
+        const handleMouseOver = (e) => {
+          const element = elementRef.current;
+          const span = spanRef.current;
+    
+          span.style.left = `${e.pageX - element.offsetLeft}px`;
+          span.style.top = `${e.pageY - element.offsetTop}px`;
+    
+          // Add animation class
+          element.classList.add(ANIMATEDCLASSNAME);
+        };
+    
+        const handleMouseOut = (e) => {
+          const element = elementRef.current;
+          const span = spanRef.current;
+    
+          span.style.left = `${e.pageX - element.offsetLeft}px`;
+          span.style.top = `${e.pageY - element.offsetTop}px`;
+    
+          // Remove animation class
+          element.classList.remove(ANIMATEDCLASSNAME);
+        };
+    
+        const element = elementRef.current;
+    
+        if (element) {
+          element.addEventListener('mouseover', handleMouseOver);
+          element.addEventListener('mouseout', handleMouseOut);
+          
+          // Cleanup listeners on component unmount
+          return () => {
+            element.removeEventListener('mouseover', handleMouseOver);
+            element.removeEventListener('mouseout', handleMouseOut);
+          };
+        }
+      }, []);
   // titleAnim()
   const testimonialsRef = useRef(null);
 
@@ -91,7 +129,8 @@ const Testimonials = () => {
           </div>
         <div className="w-full h-full">
           <div className="w-[200vw] flex flex-nowrap gap-[1vw] translate-x-[50%] testimonial-container items-center h-full">
-            <div className="w-[30vw] h-[30vw] rounded-[1vw] border test-card1 relative z-[2] glassmorphism flex flex-col px-[1.5vw] py-[1.5vw] pb-[3vw] text-white">
+            <div className="w-[30vw] h-[30vw] rounded-[1vw] border test-card1 relative z-[2] glassmorphism flex flex-col px-[1.5vw] py-[1.5vw] pb-[3vw] HOVER text-white" ref={elementRef}>
+              <span className="bg-[#f9f9f9] absolute z-[3]" ref={spanRef}></span>
               <div className="w-full h-1/2 flex justify-between">
                 <div className="w-full flex flex-col gap-[0.5vw] pt-[1.5vw]">
                   <h4 className="text-[1.9vw]">Ashish Dhruva</h4>

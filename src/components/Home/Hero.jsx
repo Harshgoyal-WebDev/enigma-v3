@@ -6,8 +6,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Model from "../Meshes/Model";
 import { useGSAP } from "@gsap/react";
 import ReelButton from "../Button/ReelButton";
-import { initMagneticButton } from "../splitTextUtils";
+import { initMagneticButton, SplitInLine } from "../splitTextUtils";
 import dynamic from "next/dynamic";
+import { CustomEase } from "gsap/dist/CustomEase";
 import { useLenis } from "@studio-freight/react-lenis";
 import { Html } from "@react-three/drei";
 import HeadingText from "./HeadingText";
@@ -17,7 +18,9 @@ const VideoModal = dynamic(() => import("@/components/VideoPlayer"), {
   ssr: false,
 });
 
-const Hero = () => {
+const Hero = ({timeline}) => {
+  const primaryEase = CustomEase.create("cus-1", "0.62, 0.05, 0.01, 0.99");
+ 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const lenis = useLenis();
@@ -31,6 +34,28 @@ const Hero = () => {
     setIsModalOpen(false);
     // lenis.start();
   };
+  console.log(timeline)
+  if(timeline){
+
+    useGSAP(() => {
+      const paraAnimations = document.querySelectorAll("[data-para-anim]");
+      paraAnimations.forEach((paraAnimation) => {
+        SplitInLine(paraAnimation);
+        let paraLine = paraAnimation.querySelectorAll(".line-internal");
+        gsap.from(paraLine, {
+          scrollTrigger: {
+            trigger: paraAnimation,
+            start: "top 90%",
+          },
+          delay:1,
+          duration: 1.2,
+          yPercent: 100,
+          stagger: 0.07,
+          ease: primaryEase,
+        });
+      });
+    });
+  }
   useEffect(() => {
     if (!lenis) {
       console.error("Lenis is not initialized.");
@@ -96,13 +121,13 @@ const Hero = () => {
           {/* 3d Model Container */}
           <div className="absolute top-0 left-0 w-full" id="hero-model">
             <View className="h-screen w-screen relative">
-              <Model />
+              <Model timeline={timeline} />
             </View>
           </div>
 
           {/* Hero Text Container  */}
           <div className="container-lg h-screen flex flex-col items-start justify-center gap-[2vw] title-block relative z-[-1]">
-            <View className="h-[70%] w-[80%]">
+            <View className="h-[70%] w-full">
            <HeadingText />
            </View>
             <p className="w-[38%] text-[1.2vw] ">
